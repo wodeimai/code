@@ -26,7 +26,8 @@ class IndexController extends Controller
 
         $guangdiu = new Guangdiu(); //舆情查询
         $html = $guangdiu->get_content($url);
-        dump($html);
+        log_debug("ceshia " . var_export($html, true));
+        //dump($html);
         exit;
         $html = new \Vendor\simple_html_dom();
         define('GD', 'http://guangdiu.com/');

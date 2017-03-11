@@ -34,11 +34,11 @@ class Guangdiu extends Curl
             $article[$key]['target_url'] = $item->find('a.innergototobuybtn', 0)->href;
 
             //用真实链接替换guangdiu link
-            if (strstr($article[$key]['target_url'], $guangdiu_go)) {
-                $urlss = $this->getSearchHostUrl("http://www.meidebi.com/g-1600203.html");
-                //echo "http://guagndiu.com/" . $article[$key]['target_url'];exit;
-                dump($urlss);exit;
-            }
+            // if (strstr($article[$key]['target_url'], $guangdiu_go)) {
+            //     $urlss = $this->getSearchHostUrl("http://www.meidebi.com/g-1600203.html");
+            //     //echo "http://guagndiu.com/" . $article[$key]['target_url'];exit;
+            //     dump($urlss);exit;
+            // }
             //if(如果链接中含有go。php 那么就替换){
             // $res = 'guangdiu.com/go.php?id';
             // if (strstr($article[$key]['target_url'], $res)) {

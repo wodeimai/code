@@ -1,0 +1,6 @@
+[ 2017-03-11T23:54:05+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.021216s ]
+INFO: [ app_init ] --END-- [ RunTime:0.024719s ]
+
