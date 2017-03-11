@@ -1,0 +1,1465 @@
+[ 2017-03-10T21:11:52+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000515s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000157s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000256s ]
+
+[ 2017-03-10T21:11:52+08:00 ] 127.0.0.1 /admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000429s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000163s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+SQL: SHOW COLUMNS FROM `wdm_config` [ RunTime:0.0018s ]
+SQL: SELECT `type`,`name`,`value` FROM `wdm_config` WHERE `status` = 1  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006279s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006397s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000138s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000261s ]
+
+[ 2017-03-10T21:11:52+08:00 ] 127.0.0.1 /admin.php?s=/Public/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000805s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001099s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000126s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000121s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000223s ]
+
+[ 2017-03-10T21:11:52+08:00 ] 127.0.0.1 /admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000753s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000253s ]
+
+[ 2017-03-10T21:11:52+08:00 ] 127.0.0.1 /admin.php?s=/Public/verify.html&random=0.5283740076304233
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000830s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001127s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000216s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000779s ]
+
+[ 2017-03-10T21:11:58+08:00 ] 127.0.0.1 /admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000644s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000918s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000176s ]
+NOTIC: [8] Undefined index: lite /Applications/MAMP/htdocs/mai/ThinkPHP/Library/Think/Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `wdm_member` [ RunTime:0.0023s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `wdm_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `wdm_member` [ RunTime:0.0020s ]
+SQL: SELECT `nickname` FROM `wdm_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0048s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','2130706433','member','1','1489151518','admin在2017-03-10 21:11登录了后台') [ RunTime:0.0003s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 /Applications/MAMP/htdocs/mai/Application/Common/Common/function.php 第 679 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given /Applications/MAMP/htdocs/mai/Application/Common/Common/function.php 第 679 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wdm_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1489065118 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `wdm_member` SET `score`=score+10 WHERE ( uid=1 AND status>-1 ) [ RunTime:0.0030s ]
+SQL: UPDATE `wdm_member` SET `login`=`login`+1,`last_login_time`='1489151518',`last_login_ip`='2130706433' WHERE `uid` = 1 [ RunTime:0.0004s ]
+
+[ 2017-03-10T21:11:59+08:00 ] 127.0.0.1 /admin.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000722s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001033s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000127s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0027s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0013s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Index/index%' ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `wdm_addons` [ RunTime:0.0017s ]
+SQL: SELECT `config` FROM `wdm_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_member` [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wdm_member` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wdm_action_log` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `wdm_document` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wdm_document` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `wdm_category` [ RunTime:0.0023s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wdm_category` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wdm_model` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.031313s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003376s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003469s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000079s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.028734s ]
+SQL: SELECT `config` FROM `wdm_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.145236s ]
+SQL: select version() as v; [ RunTime:0.0007s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007624s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.108175s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.115785s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:0.115998s ]
+SQL: SELECT `config` FROM `wdm_addons` WHERE `name` = 'DevTeam' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.155808s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003623s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.121022s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.124652s ]
+INFO: Run Addons\DevTeam\DevTeamAddon [ RunTime:0.008707s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.153600s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004078s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.121022s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.125046s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000121s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000200s ]
+
+[ 2017-03-10T21:12:02+08:00 ] 127.0.0.1 /admin.php?s=/Config/group.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000581s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000813s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000101s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000202s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0032s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Config/group%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `wdm_config` [ RunTime:0.0024s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `wdm_config` WHERE `status` = 1 AND `group` = 1 ORDER BY sort  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029416s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029496s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000111s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000258s ]
+
+[ 2017-03-10T21:12:04+08:00 ] 127.0.0.1 /admin.php?s=/Config/group/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000455s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000147s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0032s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Config/group%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `wdm_config` [ RunTime:0.0026s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `wdm_config` WHERE `status` = 1 AND `group` = 2 ORDER BY sort  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000222s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000326s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026350s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026426s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000076s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000133s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000087s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000193s ]
+
+[ 2017-03-10T21:12:08+08:00 ] 127.0.0.1 /admin.php?s=/Config/group/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000882s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000242s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0006s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Config/group%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_config` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `wdm_config` WHERE `status` = 1 AND `group` = 3 ORDER BY sort  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029920s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000092s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000072s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000149s ]
+
+[ 2017-03-10T21:12:09+08:00 ] 127.0.0.1 /admin.php?s=/Config/group/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000671s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000105s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0031s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Config/group%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_config` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `wdm_config` WHERE `status` = 1 AND `group` = 4 ORDER BY sort  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038451s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038585s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000096s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000183s ]
+
+[ 2017-03-10T21:12:17+08:00 ] 127.0.0.1 /admin.php?s=/Config/save.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000583s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000889s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000144s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0037s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Config/save%' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_config` [ RunTime:0.0020s ]
+SQL: UPDATE `wdm_config` SET `value`='1' WHERE `name` = 'SHOW_PAGE_TRACE' [ RunTime:0.0003s ]
+SQL: UPDATE `wdm_config` SET `value`='0:数字
+1:字符
+2:文本
+3:数组
+4:枚举' WHERE `name` = 'CONFIG_TYPE_LIST' [ RunTime:0.0002s ]
+SQL: UPDATE `wdm_config` SET `value`='ambiance' WHERE `name` = 'CODEMIRROR_THEME' [ RunTime:0.0002s ]
+SQL: UPDATE `wdm_config` SET `value`='1:基本
+2:内容
+3:用户
+4:系统' WHERE `name` = 'CONFIG_GROUP_LIST' [ RunTime:0.0002s ]
+SQL: UPDATE `wdm_config` SET `value`='./Data/' WHERE `name` = 'DATA_BACKUP_PATH' [ RunTime:0.0002s ]
+SQL: UPDATE `wdm_config` SET `value`='1:视图
+2:控制器' WHERE `name` = 'HOOKS_TYPE' [ RunTime:0.0002s ]
+SQL: UPDATE `wdm_config` SET `value`='20971520' WHERE `name` = 'DATA_BACKUP_PART_SIZE' [ RunTime:0.0002s ]
+SQL: UPDATE `wdm_config` SET `value`='AUTH_ON:1
+AUTH_TYPE:2' WHERE `name` = 'AUTH_CONFIG' [ RunTime:0.0002s ]
+SQL: UPDATE `wdm_config` SET `value`='1' WHERE `name` = 'DATA_BACKUP_COMPRESS' [ RunTime:0.0002s ]
+SQL: UPDATE `wdm_config` SET `value`='9' WHERE `name` = 'DATA_BACKUP_COMPRESS_LEVEL' [ RunTime:0.0002s ]
+SQL: UPDATE `wdm_config` SET `value`='1' WHERE `name` = 'DEVELOP_MODE' [ RunTime:0.0002s ]
+SQL: UPDATE `wdm_config` SET `value`='' WHERE `name` = 'ADMIN_ALLOW_IP' [ RunTime:0.0002s ]
+
+[ 2017-03-10T21:12:18+08:00 ] 127.0.0.1 /admin.php?s=/Config/group/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000722s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001024s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `wdm_config` [ RunTime:0.0035s ]
+SQL: SELECT `type`,`name`,`value` FROM `wdm_config` WHERE `status` = 1  [ RunTime:0.0003s ]
+
+[ 2017-03-10T22:25:42+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000748s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000127s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000237s ]
+
+[ 2017-03-10T22:25:53+08:00 ] 127.0.0.1 /admin.php?s=/Config/group.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001529s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+
+[ 2017-03-10T22:25:55+08:00 ] 127.0.0.1 /admin.php?s=/Model/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000418s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000133s ]
+
+[ 2017-03-10T22:25:58+08:00 ] 127.0.0.1 /admin.php?s=/Model/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000477s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000175s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000271s ]
+
+[ 2017-03-10T22:32:06+08:00 ] 127.0.0.1 /admin.php?s=/Model/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000520s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000237s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Model/update%' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 58 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0021s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `wdm_model` WHERE `name` = 'wdm_goods' LIMIT 1   [ RunTime:0.0022s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\ModelModel::getFields() /Applications/MAMP/htdocs/mai/Application/Admin/Model/ModelModel.class.php 第 85 行.
+NOTIC: [2] Missing argument 1 for Admin\Model\ModelModel::getAttribute() /Applications/MAMP/htdocs/mai/Application/Admin/Model/ModelModel.class.php 第 89 行.
+SQL: INSERT INTO `wdm_model` (`name`,`title`,`extend`,`engine_type`,`need_pk`,`create_time`,`update_time`,`status`,`field_sort`,`attribute_list`) VALUES ('wdm_goods','采集商品表','0','MyISAM','1','1489156326','1489156326','1','','') [ RunTime:0.0049s ]
+NOTIC: [2] unlink(./Runtime/Temp/8badceef8761e1f2fa41d8bf7e2cdf39.php): No such file or directory /Applications/MAMP/htdocs/mai/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+NOTIC: [8] Undefined index: id /Applications/MAMP/htdocs/mai/Application/Admin/Model/ModelModel.class.php 第 76 行.
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_model' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0045s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('7','1','2130706433','model','4','1489156326','操作url：/admin.php?s=/Model/update.html') [ RunTime:0.0058s ]
+NOTIC: [8] Undefined index: id /Applications/MAMP/htdocs/mai/Application/Admin/Controller/ModelController.class.php 第 131 行.
+
+[ 2017-03-10T22:32:08+08:00 ] 127.0.0.1 /admin.php?s=/Model/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000437s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000147s ]
+
+[ 2017-03-10T22:32:11+08:00 ] 127.0.0.1 /admin.php?s=/think/lists/model/wdm_goods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000452s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000644s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000074s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000149s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with Admin\Controller\AdminController::lists($model, $where = Array, $order = '', $field = true) /Applications/MAMP/htdocs/mai/Application/Admin/Controller/ThinkController.class.php 第 16 行.
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'wodeimai.wdm_wdm_goods' doesn't exist
+
+[ 2017-03-10T22:32:14+08:00 ] 127.0.0.1 /admin.php?s=/model/edit/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001271s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000133s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+
+[ 2017-03-10T22:32:17+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000762s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000453s ]
+
+[ 2017-03-10T22:35:02+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000427s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0032s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'from' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('from','来路','select','char(50) NOT NULL','1:逛丢
+2:什么值得买','1','1:逛丢;2:什么值得买','1','0','regex','','','3','function','','3','0','4','1','1489156502','1489156502') [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0026s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0005s ]
+SQL: SELECT `engine_type`,`need_pk` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 CREATE TABLE IF NOT EXISTS `wdm_wdm_goods` (
+                `id`  int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键' ,
+                `from`  char(50) NOT NULL  DEFAULT 1 COMMENT '来路' ,
+                PRIMARY KEY (`id`)
+                )
+                ENGINE=MyISAM
+                DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+                CHECKSUM=0
+                ROW_FORMAT=DYNAMIC
+                DELAY_KEY_WRITE=0
+                ; [ RunTime:0.0257s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','33','1489156502','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0003s ]
+
+[ 2017-03-10T22:35:04+08:00 ] 127.0.0.1 /admin.php?s=/Model/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000577s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000837s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000137s ]
+
+[ 2017-03-10T22:35:06+08:00 ] 127.0.0.1 /admin.php?s=/model/edit/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000486s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000185s ]
+
+[ 2017-03-10T22:35:08+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000606s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000909s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000174s ]
+
+[ 2017-03-10T22:35:10+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000417s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000072s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000159s ]
+
+[ 2017-03-10T22:35:47+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000632s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000877s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000181s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'title' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('title','标题','string','varchar(255) NOT NULL','','','标题','1','0','regex','','','3','function','','3','0','4','1','1489156547','1489156547') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0018s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0003s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `title`  varchar(255) NOT NULL  COMMENT '标题'; [ RunTime:0.0247s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0018s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','34','1489156547','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0003s ]
+
+[ 2017-03-10T22:35:49+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000644s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000905s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000140s ]
+
+[ 2017-03-10T22:35:50+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000437s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000181s ]
+
+[ 2017-03-10T22:36:30+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000544s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000755s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0037s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'desc' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('desc','描述','string','varchar(255) NOT NULL','','','描述','1','0','regex','','','3','function','','3','0','4','1','1489156590','1489156590') [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0029s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0004s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `desc`  varchar(255) NOT NULL  COMMENT '描述'; [ RunTime:0.0170s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0018s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','35','1489156589','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0005s ]
+
+[ 2017-03-10T22:36:31+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000721s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000947s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000229s ]
+
+[ 2017-03-10T22:36:50+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001132s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001676s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000230s ]
+
+[ 2017-03-10T22:37:37+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000641s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000942s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000140s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0007s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0007s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'pic' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('pic','封面图','picture','int(10) UNSIGNED NOT NULL','','','','1','0','regex','','','3','function','','3','0','4','1','1489156656','1489156656') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0018s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0003s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `pic`  int(10) UNSIGNED NOT NULL  COMMENT '封面图'; [ RunTime:0.0137s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0017s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','36','1489156656','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0003s ]
+
+[ 2017-03-10T22:37:38+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000596s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000883s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000100s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000278s ]
+
+[ 2017-03-10T23:00:46+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004301s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000391s ]
+
+[ 2017-03-10T23:01:08+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000464s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000567s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0021s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0017s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'cate' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('cate','分类','num','int(10) UNSIGNED NOT NULL','','','','1','0','regex','','','3','function','','3','0','4','1','1489158068','1489158068') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0020s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0020s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `cate`  int(10) UNSIGNED NOT NULL  COMMENT '分类'; [ RunTime:0.0179s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0018s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','37','1489158068','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0006s ]
+
+[ 2017-03-10T23:01:09+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000685s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000979s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000224s ]
+
+[ 2017-03-10T23:01:11+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000543s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000764s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000163s ]
+
+[ 2017-03-10T23:05:44+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000780s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001117s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000192s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0024s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'site' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-03-10T23:05:49+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000872s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000260s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0022s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'site' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('site','来源网站','string','varchar(255) NOT NULL','','','如：什么值得买等','1','0','regex','','','3','function','','3','0','4','1','1489158349','1489158349') [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0019s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0015s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `site`  varchar(255) NOT NULL  COMMENT '来源网站'; [ RunTime:0.0182s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0017s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','38','1489158349','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0003s ]
+
+[ 2017-03-10T23:05:51+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000678s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000952s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000151s ]
+
+[ 2017-03-10T23:05:55+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000416s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000147s ]
+
+[ 2017-03-10T23:12:17+08:00 ] 127.0.0.1 /admin.php?s=/Category/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000620s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000977s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000179s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000300s ]
+
+[ 2017-03-10T23:12:19+08:00 ] 127.0.0.1 /admin.php?s=/Model/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000726s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000253s ]
+
+[ 2017-03-10T23:12:30+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000842s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001113s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+
+[ 2017-03-10T23:12:33+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000678s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000987s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000240s ]
+
+[ 2017-03-10T23:12:59+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000578s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000871s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000198s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0056s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'from_id' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('from_id','目标站id','num','int(10) UNSIGNED NOT NULL','','','','1','0','regex','','','3','function','','3','0','4','1','1489158779','1489158779') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0018s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0014s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `from_id`  int(10) UNSIGNED NOT NULL  COMMENT '目标站id'; [ RunTime:0.0176s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0015s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','39','1489158779','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0007s ]
+
+[ 2017-03-10T23:13:01+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000420s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000067s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000135s ]
+
+[ 2017-03-10T23:13:03+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000888s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000193s ]
+
+[ 2017-03-10T23:13:25+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000512s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000170s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000286s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'target_url' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-03-10T23:13:30+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000739s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000181s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'target_url' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('target_url','目标地址','string','varchar(255) NOT NULL','','','商品最终地址','1','0','regex','','','3','function','','3','0','4','1','1489158810','1489158810') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0021s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0004s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `target_url`  varchar(255) NOT NULL  COMMENT '目标地址'; [ RunTime:0.0209s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0027s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','40','1489158810','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0004s ]
+
+[ 2017-03-10T23:13:32+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000430s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000137s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+
+[ 2017-03-10T23:15:03+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/edit/id/39.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000821s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000268s ]
+
+[ 2017-03-10T23:15:19+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000561s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000801s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0031s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'from_id' AND `model_id` = 4 AND `id` <> '39' LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0022s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `wdm_attribute` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0002s ]
+SQL:             ALTER TABLE `wdm_wdm_goods`
+CHANGE COLUMN `from_id` `from_id`  int(10) UNSIGNED NOT NULL  COMMENT '被采集站id' ; [ RunTime:0.0209s ]
+SQL: UPDATE `wdm_attribute` SET `name`='from_id',`title`='被采集站id',`type`='num',`field`='int(10) UNSIGNED NOT NULL',`extra`='',`value`='',`remark`='',`is_show`='1',`is_must`='0',`validate_type`='regex',`validate_rule`='',`error_info`='',`validate_time`='3',`auto_type`='function',`auto_rule`='',`auto_time`='3',`model_id`='4',`update_time`='1489158919' WHERE `id` = 39 [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0021s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','39','1489158918','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0003s ]
+
+[ 2017-03-10T23:15:20+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000510s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000762s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000072s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000140s ]
+
+[ 2017-03-10T23:16:08+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/edit/id/40.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000569s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000234s ]
+
+[ 2017-03-10T23:16:12+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000453s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000646s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000152s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0048s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'target_url' AND `model_id` = 4 AND `id` <> '40' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0018s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `wdm_attribute` WHERE `id` = 40 LIMIT 1   [ RunTime:0.0002s ]
+SQL:             ALTER TABLE `wdm_wdm_goods`
+CHANGE COLUMN `target_url` `target_url`  varchar(255) NOT NULL  COMMENT '目标网址' ; [ RunTime:0.0197s ]
+SQL: UPDATE `wdm_attribute` SET `name`='target_url',`title`='目标网址',`type`='string',`field`='varchar(255) NOT NULL',`extra`='',`value`='',`remark`='商品最终地址',`is_show`='1',`is_must`='0',`validate_type`='regex',`validate_rule`='',`error_info`='',`validate_time`='3',`auto_type`='function',`auto_rule`='',`auto_time`='3',`model_id`='4',`update_time`='1489158972' WHERE `id` = 40 [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0021s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','40','1489158972','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0004s ]
+
+[ 2017-03-10T23:16:13+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000421s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000136s ]
+
+[ 2017-03-10T23:16:16+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000485s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000163s ]
+
+[ 2017-03-10T23:16:35+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000764s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000987s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000165s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0035s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'target' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('target','目标站','string','varchar(255) NOT NULL','','','例如：京东，亚马逊','1','0','regex','','','3','function','','3','0','4','1','1489158995','1489158995') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0020s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0003s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `target`  varchar(255) NOT NULL  COMMENT '目标站'; [ RunTime:0.0187s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','41','1489158995','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0003s ]
+
+[ 2017-03-10T23:16:37+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001126s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000103s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000190s ]
+
+[ 2017-03-10T23:16:40+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/edit/id/40.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000734s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000270s ]
+
+[ 2017-03-10T23:16:45+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/edit/id/38.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000494s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000167s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000313s ]
+
+[ 2017-03-10T23:27:45+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/edit/id/36.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000929s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000122s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000228s ]
+
+[ 2017-03-10T23:28:02+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000698s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001026s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000196s ]
+
+[ 2017-03-10T23:28:19+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000575s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000202s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0035s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'content' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('content','内容','editor','text NOT NULL','','','','1','0','regex','','','3','function','','3','0','4','1','1489159699','1489159699') [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0020s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0004s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `content`  text NOT NULL  COMMENT '内容'; [ RunTime:0.0460s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0125s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','42','1489159699','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0075s ]
+
+[ 2017-03-10T23:28:21+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000610s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000874s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000201s ]
+
+[ 2017-03-10T23:39:02+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/remove/id/42.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000554s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000770s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000091s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000173s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/remove%' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0004s ]
+SQL: DELETE FROM `wdm_attribute` WHERE `id` = 42 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0023s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0004s ]
+SQL:             ALTER TABLE `wdm_wdm_goods`
+DROP COLUMN `content`; [ RunTime:0.0169s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','42','1489160342','操作url：/admin.php?s=/Attribute/remove/id/42.html') [ RunTime:0.0006s ]
+
+[ 2017-03-10T23:39:03+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000522s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000175s ]
+
+[ 2017-03-10T23:39:45+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000592s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000862s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000183s ]
+
+[ 2017-03-10T23:40:37+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000426s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000127s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'status' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-03-10T23:40:54+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000514s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000070s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000132s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0007s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'status' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('status','商品状态','select','tinyint(1) NOT NULL','0:内容页未采集
+1:已采集
+','0','','1','0','regex','','','3','function','','3','0','4','1','1489160454','1489160454') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0022s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0004s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `status`  tinyint(1) NOT NULL  DEFAULT 0 COMMENT '商品状态'; [ RunTime:0.0148s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0016s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','43','1489160454','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0002s ]
+
+[ 2017-03-10T23:40:55+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000523s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000200s ]
+
+[ 2017-03-10T23:41:19+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000701s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000187s ]
+
+[ 2017-03-10T23:41:51+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000536s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000850s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000131s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0043s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0007s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'from_time' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('from_time','来源时间','datetime','int(10) NOT NULL','','','','1','0','regex','','','3','function','','3','0','4','1','1489160511','1489160511') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0021s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0004s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `from_time`  int(10) NOT NULL  COMMENT '来源时间'; [ RunTime:0.0187s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','44','1489160511','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0002s ]
+
+[ 2017-03-10T23:41:53+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000637s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+
+[ 2017-03-10T23:41:54+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001297s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001759s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000183s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+
+[ 2017-03-10T23:42:31+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000915s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000185s ]
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `wdm_attribute` WHERE `name` = 'create_time' AND `model_id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `wdm_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('create_time','采集发布时间','datetime','int(10) NOT NULL','','','','1','0','regex','','','3','function','time','3','0','4','1','1489160551','1489160551') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0019s ]
+SQL: SELECT `name`,`extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL:                 SHOW TABLES LIKE 'wdm_wdm_goods'; [ RunTime:0.0003s ]
+SQL:                 ALTER TABLE `wdm_wdm_goods`
+ADD COLUMN `create_time`  int(10) NOT NULL  COMMENT '采集发布时间'; [ RunTime:0.0161s ]
+SQL: SELECT `name` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `wdm_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_action_log` [ RunTime:0.0016s ]
+SQL: INSERT INTO `wdm_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','45','1489160551','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0003s ]
+
+[ 2017-03-10T23:42:33+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000506s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000753s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000163s ]
+
+[ 2017-03-10T23:42:39+08:00 ] 127.0.0.1 /admin.php?s=/Model/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000474s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000741s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000156s ]
+
+[ 2017-03-10T23:42:41+08:00 ] 127.0.0.1 /admin.php?s=/think/lists/model/wdm_goods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000689s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000881s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000146s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with Admin\Controller\AdminController::lists($model, $where = Array, $order = '', $field = true) /Applications/MAMP/htdocs/mai/Application/Admin/Controller/ThinkController.class.php 第 16 行.
+
+[ 2017-03-10T23:42:42+08:00 ] 127.0.0.1 /admin.php?s=/Think/add/model/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000460s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000260s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with Admin\Controller\AdminController::lists($model, $where = Array, $order = '', $field = true) /Applications/MAMP/htdocs/mai/Application/Admin/Controller/ThinkController.class.php 第 16 行.
+
+[ 2017-03-10T23:42:58+08:00 ] 127.0.0.1 /admin.php?s=/File/uploadPicture/session_id/96130d361663a2f006510448a589c989.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000770s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000196s ]
+
+[ 2017-03-10T23:43:30+08:00 ] 127.0.0.1 /admin.php?s=/Think/add/model/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000614s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000987s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000129s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with Admin\Controller\AdminController::lists($model, $where = Array, $order = '', $field = true) /Applications/MAMP/htdocs/mai/Application/Admin/Controller/ThinkController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `wdm_menu` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`title`,`url` FROM `wdm_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `wdm_menu` WHERE ( pid !=0 AND url like '%Think/add%' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 58 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `wdm_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT DISTINCT  `group` FROM `wdm_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`url` FROM `wdm_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `wdm_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_model` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_wdm_goods` [ RunTime:0.0019s ]
+SQL: SELECT `extend` FROM `wdm_model` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_attribute` [ RunTime:0.0018s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `wdm_attribute` WHERE `model_id` = 4  [ RunTime:0.0004s ]
+SQL: INSERT INTO `wdm_wdm_goods` (`from`,`title`,`desc`,`pic`,`cate`,`site`,`from_id`,`target_url`,`target`,`status`,`from_time`,`create_time`) VALUES ('1','我说标题','描述','1','0','什么值得买','123123','123123','京东','0','1489160520','1489160610') [ RunTime:0.0004s ]
+
+[ 2017-03-10T23:43:32+08:00 ] 127.0.0.1 /admin.php?s=/Think/lists/model/wdm_goods.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000495s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000160s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with Admin\Controller\AdminController::lists($model, $where = Array, $order = '', $field = true) /Applications/MAMP/htdocs/mai/Application/Admin/Controller/ThinkController.class.php 第 16 行.
+
+[ 2017-03-10T23:44:14+08:00 ] 127.0.0.1 /admin.php?s=/Model/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000498s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000259s ]
+
+[ 2017-03-10T23:44:16+08:00 ] 127.0.0.1 /admin.php?s=/model/edit/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000624s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000946s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000112s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+
+[ 2017-03-10T23:44:22+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000673s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000996s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000206s ]
+
+[ 2017-03-10T23:44:25+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/edit/id/37.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001078s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+

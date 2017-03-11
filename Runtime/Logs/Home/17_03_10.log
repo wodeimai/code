@@ -1,0 +1,289 @@
+[ 2017-03-10T20:51:24+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+SQL: SHOW COLUMNS FROM `wdm_hooks` [ RunTime:0.0046s ]
+SQL: SELECT `name`,`addons` FROM `wdm_hooks`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_addons` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`name` FROM `wdm_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name` FROM `wdm_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name` FROM `wdm_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name` FROM `wdm_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name` FROM `wdm_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name` FROM `wdm_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name` FROM `wdm_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`name` FROM `wdm_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0004s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.041365s ]
+INFO: [ app_init ] --END-- [ RunTime:0.041861s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `wdm_config` [ RunTime:0.0026s ]
+SQL: SELECT `type`,`name`,`value` FROM `wdm_config` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `wdm_category` [ RunTime:0.0021s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `wdm_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `wdm_document` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `wdm_document` WHERE `status` = 1 AND `pid` = 0 AND `create_time` < 1489150284 AND ( deadline = 0 OR deadline > 1489150284 ) ORDER BY `id` DESC  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+SQL: SHOW COLUMNS FROM `wdm_channel` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `wdm_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `wdm_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `wdm_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.018576s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005616s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005783s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `wdm_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `wdm_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `wdm_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` IN ('1','2') AND `create_time` < 1489150284 AND ( deadline = 0 OR deadline > 1489150284 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,10   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: lite /Applications/MAMP/htdocs/mai/ThinkPHP/Library/Think/Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `wdm_category` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `wdm_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038757s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005783s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.032935s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000101s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000159s ]
+
+[ 2017-03-10T20:58:11+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000714s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000146s ]
+SQL: SHOW COLUMNS FROM `wdm_config` [ RunTime:0.0019s ]
+SQL: SELECT `type`,`name`,`value` FROM `wdm_config` WHERE `status` = 1  [ RunTime:0.0004s ]
+
+[ 2017-03-10T20:59:05+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000519s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000815s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000092s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000161s ]
+SQL: SHOW COLUMNS FROM `wdm_config` [ RunTime:0.0038s ]
+SQL: SELECT `type`,`name`,`value` FROM `wdm_config` WHERE `status` = 1  [ RunTime:0.0007s ]
+
+[ 2017-03-10T21:08:14+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000626s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000867s ]
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 32 行.
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 51 行.
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 52 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000290s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000460s ]
+
+[ 2017-03-10T21:10:00+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000732s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000974s ]
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 32 行.
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 51 行.
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 52 行.
+NOTIC: [8] Undefined variable: runTime /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 57 行.
+DEBUG: 执行时间
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000144s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000292s ]
+
+[ 2017-03-10T21:10:22+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000393s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 32 行.
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 51 行.
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 52 行.
+NOTIC: [8] Undefined variable: runTime /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 57 行.
+DEBUG: 执行时间
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000112s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000220s ]
+
+[ 2017-03-10T21:11:44+08:00 ] 127.0.0.1 /index.php?admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000970s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001351s ]
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 32 行.
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 51 行.
+NOTIC: [8] Trying to get property of non-object /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 52 行.
+NOTIC: [8] Undefined variable: runTime /Applications/MAMP/htdocs/mai/Application/Home/Controller/IndexController.class.php 第 57 行.
+DEBUG: 执行时间
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000278s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000486s ]
+
+[ 2017-03-10T21:12:54+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000981s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001322s ]
+
+[ 2017-03-10T21:13:50+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000406s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000599s ]
+
+[ 2017-03-10T21:21:12+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000748s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001070s ]
+
+[ 2017-03-10T21:21:16+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000400s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000573s ]
+
+[ 2017-03-10T21:22:23+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000532s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000761s ]
+
+[ 2017-03-10T21:23:14+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000490s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000665s ]
+
+[ 2017-03-10T21:23:51+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000483s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+
+[ 2017-03-10T21:37:42+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002440s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002657s ]
+
+[ 2017-03-10T21:39:25+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002425s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002735s ]
+
+[ 2017-03-10T21:39:48+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001148s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001634s ]
+
+[ 2017-03-10T21:40:04+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000638s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000915s ]
+
+[ 2017-03-10T21:40:18+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000420s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+
+[ 2017-03-10T21:40:41+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000512s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000731s ]
+
+[ 2017-03-10T21:41:03+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000439s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+
+[ 2017-03-10T21:41:25+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000727s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001039s ]
+
+[ 2017-03-10T21:41:46+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000833s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001198s ]
+
+[ 2017-03-10T21:42:40+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000103s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001164s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001904s ]
+
+[ 2017-03-10T21:43:00+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000553s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+
+[ 2017-03-10T21:43:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000540s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+
+[ 2017-03-10T21:45:56+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000602s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000819s ]
+
+[ 2017-03-10T21:46:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000468s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000694s ]
+
+[ 2017-03-10T21:48:19+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000552s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+
+[ 2017-03-10T21:49:56+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000753s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001072s ]
+
+[ 2017-03-10T22:24:04+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001116s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001539s ]
+
+[ 2017-03-10T22:25:24+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002373s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002744s ]
+
+[ 2017-03-10T23:42:58+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000483s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000741s ]
+
