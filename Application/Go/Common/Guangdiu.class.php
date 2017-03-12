@@ -19,13 +19,15 @@ class Guangdiu extends Curl
     }
 
     /**
-     * 采集器初始化
+     * 采集
      */
     public function init()
     {
         $url = "http://guangdiu.com/cate.php?k=baby";
         $result = $this->check_new($url);
         return $result;
+
+        //return true;
     }
 
     /**
@@ -40,8 +42,10 @@ class Guangdiu extends Curl
         $guangdiuLastId = S('guangdiu_last_id');
 
         if (empty($guangdiuLastId)) {
+
             log_error('获取逛丢最后id失败');
             return false;
+
         } else {
             //查询当前最新商品id
             $get_html = $this->getHtmlContent($url);
