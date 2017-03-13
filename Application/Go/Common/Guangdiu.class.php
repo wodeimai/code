@@ -81,6 +81,8 @@ class Guangdiu extends Curl
     {
         $get_html = $this->getHtmlContent($url);
         $this->shd->load($get_html['result']);
+        $guangdiu_go = 'go.php?id';
+
         foreach ($this->shd->find("div.gooditem") as $key => $item) {
             $target[$key]['herf'] = $item->find('a.goodname', 0)->href;
             $target[$key]['from_id'] = preg_replace('/\D/', '', $target[$key]['herf']);
@@ -88,33 +90,36 @@ class Guangdiu extends Curl
             if ($target[$key]['from_id'] > $guangdiuLastId) {
                 $article[$key]['title'] = $item->find('a.goodname', 0)->innertext;
                 $article[$key]['desc'] = $item->find('a.abstractcontent', 0)->plaintext;
-                $article[$key]['site'] = $item->find('a.rightmallname', 0)->plaintext;
+                $article[$key]['target'] = $item->find('a.rightmallname', 0)->plaintext;
                 $article[$key]['from_id'] = $target[$key]['from_id'];
                 $article[$key]['img'] = $item->find('img', 0)->src;
                 $article[$key]['target_url'] = $item->find('a.innergototobuybtn', 0)->href;
-                $article[$key]['form_time'] = $item->find('div.infotime', 0)->plaintext;
+                $article[$key]['source_name'] = $item->find('div.infofrom', 0)->plaintext;
+                $article[$key]['source_time'] = $item->find('div.infotime', 0)->plaintext;
+
+                //处理采集到的数组
+                $list[$key]['form'] = "1"; //逛丢1
+                $list[$key]['from_id'] = $article[$key]['from_id'];
+                $list[$key]['title'] = trim($article[$key]['title']);
+                $article[$key]['desc'] = filter_space($article[$key]['desc']);
+                $list[$key]['desc'] = str_replace('...&nbsp;完整阅读>', '', $article[$key]['desc']);
+                $list[$key]['img'] = str_replace('?imageView2/2/w/224/h/224', '', $article[$key]['img']);
+                $list[$key]['cate'] = '类别todo';
+                $list[$key]['source_name'] = $article[$key]['source_name'];
+                $list[$key]['source_time'] = get_guangdiu_from_time($article[$key]['source_time']);
+                $list[$key]['target'] = $article[$key]['target'];
+                $list[$key]['target_url'] = $article[$key]['target_url'];
+
+                //如果是逛丢的京东,考拉海淘推广链接，则增加逛丢域名
+                if (strstr($article[$key]['target_url'], $guangdiu_go)) {
+                    $list[$key]['target_url'] = self::DOMAIN . $article[$key]['target_url'];
+                }
+                //保存图片
+                //save_jpg($list[$key]['img'], $list[$key]['from_id']);
             }
         }
         $this->shd->clear();
 
-        //处理采集到的数组
-        $guangdiu_go = 'go.php?id';
-        foreach ($article as $key => $value) {
-            $list[$key]['title'] = trim($value['title']);
-            $value['desc'] = filter_space($value['desc']);
-            $list[$key]['desc'] = str_replace('...&nbsp;完整阅读>', '', $value['desc']);
-            $list[$key]['site'] = $value['site'];
-            $list[$key]['from_id'] = $value['from_id'];
-            $list[$key]['img'] = str_replace('?imageView2/2/w/224/h/224', '', $value['img']);
-            $list[$key]['target_url'] = $value['target_url'];
-            $list[$key]['form_time'] = get_guangdiu_from_time($value['form_time']);
-            //如果是逛丢的京东,考拉海淘推广链接，则增加逛丢域名
-            if (strstr($value['target_url'], $guangdiu_go)) {
-                $list[$key]['target_url'] = self::DOMAIN . $value['target_url'];
-            }
-            //保存图片
-            //save_jpg($value['img'], $value['from_id']);
-        }
         //TODO  插入数据库
         //TODO  更新guangdiuLastId缓存值
         return $list;
@@ -136,7 +141,7 @@ class Guangdiu extends Curl
     }
 
     /*
-    ////////////////////////////////////////
+////////////////////////////////////////
 $html = new \Vendor\simple_html_dom();
 define('GD', 'http://guangdiu.com/');
 $html->load_file(GD);

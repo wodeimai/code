@@ -34,7 +34,7 @@ function filter_space($string)
 }
 
 /**
- * 从逛丢格式化来源时间
+ * 格式化从逛丢获取的来源时间
  * @param  string $string  eg:5分钟
  * @return int 返回当前时间减去int的时间戳
  */
