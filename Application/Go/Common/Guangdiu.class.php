@@ -137,36 +137,6 @@ class Guangdiu extends Curl
 
     /*
     ////////////////////////////////////////
-
-    /**
-     * 过滤字符串
-     * @param  $url  需要采集的网址
-     * @return
-     */
-    /*
- * 获取真实链接
-
-private function getSearchHostUrl($url, $referer = 'http://guangdiu.com')
-{
-$results = array();
-$results['form'] = $this->curl($url, 10, true, $referer, true);
-return $results;
-if ($this->curlinfo['http_code'] == 0) {
-$results['url'] = '';
-} else {
-$results['url'] = $this->curlinfo['url'];
-}
-
-//用真实链接替换sogou link
-$res = 'go.php?id';
-if (strstr($results['url'], $res)) {
-preg_match('/<META.*?URL=("|\')(.*?)("|\')/i', $results['form'], $matches);
-$results['url'] = $matches['2'];
-}
-
-return $results;
-}
-
 $html = new \Vendor\simple_html_dom();
 define('GD', 'http://guangdiu.com/');
 $html->load_file(GD);
