@@ -2,6 +2,7 @@
 
 namespace Go\Common;
 
+use Go\Common\Cache as Cache;
 use Go\Common\Curl;
 use Vendor\simple_html_dom;
 
@@ -12,11 +13,11 @@ class Guangdiu extends Curl
 {
 
     const DOMAIN = 'http://guangdiu.com/';
-    protected $shd = null;
 
     public function __construct()
     {
         $this->shd = new \Vendor\simple_html_dom();
+
     }
 
     /**
@@ -27,7 +28,6 @@ class Guangdiu extends Curl
         $url = "http://guangdiu.com/cate.php?k=baby";
         $result = $this->check_new($url);
         return $result;
-
         //return true;
     }
 
@@ -40,12 +40,10 @@ class Guangdiu extends Curl
     private function check_new($url, $type = null)
     {
         //检查缓存
-        $guangdiuLastId = S('guangdiu_last_id');
+        $guangdiuLastId = cache::getCacheLastId();
 
         if (empty($guangdiuLastId)) {
             log_error('获取逛丢最后id失败');
-            //todo
-            //读取数据库中逛丢最后的商品id，并且放入缓存中，然后重新执行
             return false;
         } else {
             //查询当前最新商品id
@@ -53,7 +51,6 @@ class Guangdiu extends Curl
             $this->shd->load($get_html['result']);
             $detail_id = $this->shd->find("div.gooditem", 0)->find('a.goodname', 0)->href;
             $this->shd->clear(); //释放内存
-
             $last_id = preg_replace('/\D/', '', $detail_id);
 
             //检查是否有新数据
@@ -84,46 +81,44 @@ class Guangdiu extends Curl
         $guangdiu_go = 'go.php?id';
 
         foreach ($this->shd->find("div.gooditem") as $key => $item) {
-            $target[$key]['herf'] = $item->find('a.goodname', 0)->href;
-            $target[$key]['from_id'] = preg_replace('/\D/', '', $target[$key]['herf']);
+            $target['herf'] = $item->find('a.goodname', 0)->href;
+            $target['from_id'] = preg_replace('/\D/', '', $target['herf']);
             //只保存商品ID比缓存的商品ID大的数据
-            if ($target[$key]['from_id'] > $guangdiuLastId) {
-                $article[$key]['title'] = $item->find('a.goodname', 0)->innertext;
-                $article[$key]['desc'] = $item->find('a.abstractcontent', 0)->plaintext;
-                $article[$key]['target'] = $item->find('a.rightmallname', 0)->plaintext;
-                $article[$key]['from_id'] = $target[$key]['from_id'];
-                $article[$key]['img'] = $item->find('img', 0)->src;
-                $article[$key]['target_url'] = $item->find('a.innergototobuybtn', 0)->href;
-                $article[$key]['source_name'] = $item->find('div.infofrom', 0)->plaintext;
-                $article[$key]['source_time'] = $item->find('div.infotime', 0)->plaintext;
+            log_info($target['from_id'] . '===========' . $guangdiuLastId);
+            if ($target['from_id'] > $guangdiuLastId) {
+                $article['title'] = $item->find('a.goodname', 0)->innertext;
+                $article['desc'] = $item->find('a.abstractcontent', 0)->plaintext;
+                $article['target'] = $item->find('a.rightmallname', 0)->plaintext;
+                $article['from_id'] = $target['from_id'];
+                $article['img'] = $item->find('img', 0)->src;
+                $article['target_url'] = $item->find('a.innergototobuybtn', 0)->href;
+                $article['source_name'] = $item->find('div.infofrom', 0)->plaintext;
+                $article['source_time'] = $item->find('div.infotime', 0)->plaintext;
 
                 //处理采集到的数组
-                $list[$key]['form'] = "1"; //逛丢1
-                $list[$key]['from_id'] = $article[$key]['from_id'];
-                $list[$key]['title'] = trim($article[$key]['title']);
-                $article[$key]['desc'] = filter_space($article[$key]['desc']);
-                $list[$key]['desc'] = str_replace('...&nbsp;完整阅读>', '', $article[$key]['desc']);
-                $list[$key]['img'] = str_replace('?imageView2/2/w/224/h/224', '', $article[$key]['img']);
-                $list[$key]['cate'] = '类别todo';
-                $list[$key]['source_name'] = $article[$key]['source_name'];
-                $list[$key]['source_time'] = get_guangdiu_from_time($article[$key]['source_time']);
-                $list[$key]['target'] = $article[$key]['target'];
-                $list[$key]['target_url'] = $article[$key]['target_url'];
+                $list['form'] = "1"; //逛丢1
+                $list['from_id'] = $article['from_id'];
+                $list['title'] = trim($article['title']);
+                $list['desc'] = str_replace('...&nbsp;完整阅读>', '', filter_space($article['desc']));
+                $list['img'] = str_replace('?imageView2/2/w/224/h/224', '', $article['img']);
+                $list['cate'] = '类别todo';
+                $list['source_name'] = $article['source_name'];
+                $list['source_time'] = get_guangdiu_from_time($article['source_time']);
+                $list['target'] = $article['target'];
+                $list['target_url'] = $article['target_url'];
 
                 //如果是逛丢的京东,考拉海淘推广链接，则增加逛丢域名
-                if (strstr($article[$key]['target_url'], $guangdiu_go)) {
-                    $list[$key]['target_url'] = self::DOMAIN . $article[$key]['target_url'];
+                if (strstr($article['target_url'], $guangdiu_go)) {
+                    $list['target_url'] = self::DOMAIN . $article['target_url'];
                 }
                 //保存图片
-                //save_jpg($list[$key]['img'], $list[$key]['from_id']);
+                //save_jpg($list['img'], $list['from_id']);
+                $lists[$key] = $list;
             }
+
         }
         $this->shd->clear();
-
-        //TODO  插入数据库
-        //TODO  更新guangdiuLastId缓存值
-        return $list;
-        //dump($article);
+        return $lists;
     }
 
     /**
