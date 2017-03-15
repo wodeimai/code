@@ -13,6 +13,7 @@ class IndexController extends HomeController
     public function index()
     {
         echo "this is first page";
+        log_debug('这是一个测试文件');
     }
 
 }

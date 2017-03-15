@@ -25,7 +25,7 @@ class IndexController extends Controller
         $html = $this->guangdiu->init();
         dump($html);
 
-        $mallList = M('wdm_mall')->where(array('type'=>'1'))->select();
+        $mallList = M('wdm_mall')->where(array('type' => '1'))->select();
         dump($mallList);
         exit;
     }
