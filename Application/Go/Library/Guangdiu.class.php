@@ -13,7 +13,6 @@ define('DOMAIN', 'http://guangdiu.com/');
  */
 class Guangdiu
 {
-    public static $shd = null;
 
     public function __construct()
     {
@@ -39,33 +38,28 @@ class Guangdiu
      */
     private function check_new($url, $type = null)
     {
-        //检查缓存
-        $guangdiuLastId = cache::getCacheLastId();
+        //检查缓存 1位逛丢
+        $guangdiuLastId = cache::getCacheLastId(1);
 
         if (empty($guangdiuLastId)) {
             log_error('获取逛丢最后id失败');
             return false;
         } else {
             //查询当前最新商品id
-            /*
-            $get_html = $this->getHtmlContent($url);
-            $this->shd->load($get_html['result']);
-            $detail_id = $this->shd->find("div.gooditem", 0)->find('a.goodname', 0)->href;
-            $this->shd->clear(); //释放内存
-            $last_id = preg_replace('/\D/', '', $detail_id);
-
+            \phpQuery::newDocumentFile($url);
+            $html = pq('.gooditem');
+            $last_id = preg_replace('/\D/', '', pq('.mallandname .goodname:eq(0)')->attr('href'));
             //检查是否有新数据
             if ($last_id <= $guangdiuLastId) {
-            log_info("没有新数据更新");
-            return true;
+                log_info("没有新数据更新");
+                return true;
             } else {
 
-            //更新缓存中的guangdiu_last_id
-            //S('guangdiu_last_id',$guangdiu_last_id);
-            //return $last_id . "===" . $guangdiuLastId;
-            return $this->get_content($url, $guangdiuLastId);
-            }*/
-            return $this->get_content($url, 3779270);
+                //更新缓存中的guangdiu_last_id
+                //S('guangdiu_last_id',$guangdiu_last_id);
+                //return $last_id . "===" . $guangdiuLastId;
+                return $this->get_content($url, '3780056');
+            }
 
         }
     }
@@ -74,9 +68,10 @@ class Guangdiu
      * 采集信息
      * @param  integer $uid 用户ID
      * @param  integer $guangdiuLastId 缓存中最后更新过的商品id
+     * @param  integer $type  国内为1  国外为2
      * @return boolean      ture-成功，false-失败
      */
-    private function get_content($url, $guangdiuLastId)
+    private function get_content($url, $guangdiuLastId, $type = '1')
     {
         $guangdiu_go = 'go.php?id';
         \phpQuery::newDocumentFile($url);
@@ -94,7 +89,7 @@ class Guangdiu
                 $good['cate'] = ""; //TODO分类id
 
                 //目标站名称和链接，例如京东商城，天猫商城
-                $good['target'] = pq($value)->find('.rightlinks .rightmallname')->text();
+                $good['target'] = cache::setMallName(pq($value)->find('.rightlinks .rightmallname')->text(), $type);
                 $good['target_url'] = pq($value)->find('.rightlinks .innergototobuybtn')->attr('href');
                 //如果是逛丢的京东,考拉海淘推广链接，则增加逛丢域名，TODO 后期替换成自己的推广链接
                 if (strstr($good['target_url'], $guangdiu_go)) {
