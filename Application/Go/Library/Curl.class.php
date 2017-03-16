@@ -1,6 +1,6 @@
 <?php
 
-namespace Go\Common;
+namespace Go\Library;
 
 class Curl
 {

@@ -2,7 +2,7 @@
 
 namespace Go\Controller;
 
-use Go\Common\Guangdiu;
+use Go\Library\Guangdiu;
 use Think\Controller;
 
 /**

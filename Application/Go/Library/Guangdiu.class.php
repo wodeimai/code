@@ -1,8 +1,8 @@
 <?php
 
-namespace Go\Common;
+namespace Go\Library;
 
-use Go\Common\Cache as Cache;
+use Go\Library\Cache as Cache;
 
 Vendor('phpQuery.phpQuery.phpQuery');
 
