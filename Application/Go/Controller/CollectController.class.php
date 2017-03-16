@@ -14,21 +14,23 @@ class CollectController extends Controller
     public function index()
     {
         Vendor('phpQuery.phpQuery.phpQuery');
-        $url = "http://guangdiu.com/cate.php?p=1&k=baby";
-        \phpQuery::newDocumentFile($url);
-        $html = pq('.gooditem');
-        foreach ($html as $key => $value) {
-            $good['title'] = pq($value)->find('.iteminfoarea .goodname')->attr('title');
-            $good['desc'] = trim(pq($value)->find('.abstractcontent')->text());
-            $good['site'] = pq($value)->find('.rightlinks .rightmallname')->text();
-            $good['tongbu'] = pq($value)->find('.timeandfrom .infofrom')->text();
-            $good['img'] = pq($value)->find('.imgandbtn img')->attr('src');
-            $good['target_url'] = pq($value)->find('.rightlinks .innergototobuybtn')->attr('href');
-            $good['from_id'] = substr($good['target_url'], strpos($good['target_url'], 'id=') + 3);
-            $good['from_time'] = time();
-            $goods[$key] = $good;
+        $url = "http://guangdiu.com/cate.php?k=baby&p=";
+        for ($i = 1; $i < 50; $i++) {
+            \phpQuery::newDocumentFile($url . $i);
+            $html = pq('.gooditem');
+            foreach ($html as $key => $value) {
+                $good['title'] = pq($value)->find('.iteminfoarea .goodname')->attr('title');
+                $good['desc'] = trim(pq($value)->find('.abstractcontent')->text());
+                $good['site'] = pq($value)->find('.rightlinks .rightmallname')->text();
+                $good['tongbu'] = pq($value)->find('.timeandfrom .infofrom')->text();
+                $good['img'] = pq($value)->find('.imgandbtn img')->attr('src');
+                $good['target_url'] = pq($value)->find('.rightlinks .innergototobuybtn')->attr('href');
+                $good['from_id'] = substr($good['target_url'], strpos($good['target_url'], 'id=') + 3);
+                $good['from_time'] = time();
+                $goods[$key] = $good;
+            }
+            dump($goods);
         }
-        dump($goods);
     }
 
 }
