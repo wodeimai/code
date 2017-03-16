@@ -3,21 +3,19 @@
 namespace Go\Common;
 
 use Go\Common\Cache as Cache;
-use Go\Common\Curl;
-use Vendor\simple_html_dom;
+Vendor('phpQuery.phpQuery.phpQuery');
 
 /**
  * 逛丢采集类
  */
-class Guangdiu extends Curl
+class Guangdiu
 {
 
     const DOMAIN = 'http://guangdiu.com/';
 
     public function __construct()
     {
-        $this->shd = new \Vendor\simple_html_dom();
-
+        
     }
 
     /**
@@ -47,6 +45,7 @@ class Guangdiu extends Curl
             return false;
         } else {
             //查询当前最新商品id
+            /*
             $get_html = $this->getHtmlContent($url);
             $this->shd->load($get_html['result']);
             $detail_id = $this->shd->find("div.gooditem", 0)->find('a.goodname', 0)->href;
@@ -63,7 +62,8 @@ class Guangdiu extends Curl
                 //S('guangdiu_last_id',$guangdiu_last_id);
                 //return $last_id . "===" . $guangdiuLastId;
                 return $this->get_content($url, $guangdiuLastId);
-            }
+            }*/
+            return $this->get_content($url, 1);
 
         }
     }
@@ -76,10 +76,26 @@ class Guangdiu extends Curl
      */
     private function get_content($url, $guangdiuLastId)
     {
-        $get_html = $this->getHtmlContent($url);
-        $this->shd->load($get_html['result']);
         $guangdiu_go = 'go.php?id';
+        \phpQuery::newDocumentFile($url);
+        $html = pq('.gooditem');
+        foreach ($html as $key => $value) {
+            $good['id']  = '1';//逛丢1
+            $good['from_id'] = $article['from_id'];
+            $good['title'] = trim(pq($value)->find('.iteminfoarea .goodname')->html());
+            $good['desc'] = str_replace('...&nbsp;完整阅读>', '', filter_space(pq($value)->find('.abstractcontent')->text()));
+            
+            $good['site'] = pq($value)->find('.rightlinks .rightmallname')->text();
+            $good['tongbu'] = pq($value)->find('.timeandfrom .infofrom')->text();
+            $good['img'] = pq($value)->find('.imgandbtn img')->attr('src');
+            $good['target_url'] = pq($value)->find('.rightlinks .innergototobuybtn')->attr('href');
+            $good['from_id'] = substr($good['target_url'], strpos($good['target_url'], 'id=') + 3);
+            $good['from_time'] = time();
+            $goods[$key] = $good;
+        }
+        dump($goods);
 
+        /*
         foreach ($this->shd->find("div.gooditem") as $key => $item) {
             $target['herf'] = $item->find('a.goodname', 0)->href;
             $target['from_id'] = preg_replace('/\D/', '', $target['herf']);
@@ -116,63 +132,9 @@ class Guangdiu extends Curl
                 $lists[$key] = $list;
             }
 
-        }
-        $this->shd->clear();
-        return $lists;
+        }*/
+        //$this->shd->clear();
+        return $goods;
     }
-
-    /**
-     * 获取网页资源
-     * @param  $url  需要采集的网址
-     * @return
-     */
-    private function getHtmlContent($url, $timeout = 10, $reload = true)
-    {
-        $form['result'] = $this->curl($url, $timeout, $reload, 'http://guangdiu.com');
-        $form['header'] = $this->curlinfo;
-        $form['error'] = $this->error;
-
-        return $form;
-    }
-
-    /*
-////////////////////////////////////////
-$html = new \Vendor\simple_html_dom();
-define('GD', 'http://guangdiu.com/');
-$html->load_file(GD);
-//$ret = $html->find('.gooditem withborder');
-
-foreach ($html->find("div.gooditem") as $key => $item) {
-$article[$key]['title'] = trim($item->find('h2.mallandname', 0)->plaintext);
-$article[$key]['desc'] = str_replace('    ', '', trim($item->find('a.abstractcontent', 0)->plaintext));
-$article[$key]['desc'] = str_replace(' ', '', $article[$key]['desc']);
-$article[$key]['desc'] = str_replace('...&nbsp;完整阅读>', '', $article[$key]['desc']);
-$article[$key]['mall'] = $item->find('a.rightmallname', 0)->plaintext;
-$article[$key]['herf'] = $item->find('a.goodname', 0)->href;
-$article[$key]['img'] = str_replace('?imageView2/2/w/224/h/224', '', $item->find('img', 0)->src);
-//保存图片
-//$content = file_get_contents($article[$key]['img']);
-//file_put_contents('./Uploads/Picture/1/'.$key.'.jpg', $content);
-}
-$html->clear();
-//dump($article);
-
-foreach ($article as $key => $value) {
-$url = GD . $value['herf'];
-$url = $this->get_html_content($url);
-$html->load($url);
-
-$new[$key]['title'] = $value['title'];
-$new[$key]['desc'] = $value['desc'];
-$new[$key]['mall'] = $value['mall'];
-$new[$key]['herf'] = $value['herf'];
-$new[$key]['img'] = $value['img'];
-$new[$key]['content'] = $html->find("div.dabstract", 0)->outertext;
-$new[$key]['url'] = $html->find("a.dgotobutton", 0)->href;
-
-$html->clear();
-}
-
-dump($new);*/
-
+  
 }

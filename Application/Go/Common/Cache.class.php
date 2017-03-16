@@ -25,7 +25,7 @@ class Cache
                 S('guangdiu_last_id', $last_id);
                 return $last_id;
             } else {
-                return '1';
+                return '1';//调用函数的地方判断了 empty返回值，所以此处为1不为0
             }
         }
 

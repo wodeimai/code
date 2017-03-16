@@ -18,7 +18,7 @@ class CollectController extends Controller
         \phpQuery::newDocumentFile($url);
         $html = pq('.gooditem');
         foreach ($html as $key => $value) {
-            $good['title'] = pq($value)->find('.iteminfoarea .goodname')->attr('title');
+            $good['title'] = pq($value)->find('.iteminfoarea .goodname')->html();
             $good['desc'] = trim(pq($value)->find('.abstractcontent')->text());
             $good['site'] = pq($value)->find('.rightlinks .rightmallname')->text();
             $good['tongbu'] = pq($value)->find('.timeandfrom .infofrom')->text();
