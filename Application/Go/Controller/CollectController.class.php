@@ -29,6 +29,7 @@ class CollectController extends Controller
             $goods[$key] = $good;
         }
         dump($goods);
+        \phpQuery::$documents = array();
     }
 
 }
