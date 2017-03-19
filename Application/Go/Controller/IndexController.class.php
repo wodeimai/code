@@ -8,6 +8,7 @@ use Think\Controller;
 /**
  * 采集控制器
  * 主要获取各个平台的聚合数据
+ * 测试
  */
 class IndexController extends Controller
 {
