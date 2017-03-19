@@ -7,6 +7,7 @@ use Think\Controller;
 /**
  * 采集控制器
  * 主要获取各个平台的聚合数据
+ * safda
  */
 class CollectController extends Controller
 {
