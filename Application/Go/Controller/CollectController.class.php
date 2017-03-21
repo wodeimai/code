@@ -33,4 +33,17 @@ class CollectController extends Controller
         \phpQuery::$documents = array();
     }
 
+    public function detail()
+    {
+        $id = '3795151';
+        $this->get_detail_content($id);
+    }
+
+    public function get_detail_content($id)
+    {
+        Vendor('phpQuery.phpQuery.phpQuery');
+        $url = "http://guangdiu.com/detail.php?id=" . $id;
+        \phpQuery::newDocumentFile($url);
+        $html = pq('.dabstract p');
+    }
 }
