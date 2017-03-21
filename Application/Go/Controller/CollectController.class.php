@@ -44,6 +44,24 @@ class CollectController extends Controller
         Vendor('phpQuery.phpQuery.phpQuery');
         $url = "http://guangdiu.com/detail.php?id=" . $id;
         \phpQuery::newDocumentFile($url);
-        $html = pq('.dabstract p');
+        $html = pq('.detaildisplay');
+
+        // 优质来源提示
+        $ritems = pq($html)->find('.ritems')->text();
+        $latesttime = pq($html)->find('.latesttime')->text();
+        $ritems = str_replace($latesttime, '[latesttime]', $ritems);
+
+        // 最先显示图片且为一张
+        $dimage = pq($html)->find('.dimage img')->attr('src');
+        $dimage_id = save_jpg($dimage, $id);
+
+        // 最先显示图片且为两张
+        $simgaheadleft = pq($html)->find('.simgaheadleft img')->attr('src');
+        $simgaheadleft_id = save_jpg($simgaheadleft, $id);
+        $simgaheadright = pq($html)->find('.simgaheadright img')->attr('src');
+        $simgaheadright_id = save_jpg($simgaheadright, $id);
+        $simgahead = $simgaheadleft_id . ',' . $simgaheadright_id;
+
+        //
     }
 }
