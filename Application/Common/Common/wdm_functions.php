@@ -12,13 +12,13 @@
  */
 function save_jpg($img, $id)
 {
-    $dir = './Uploads/Picture/' . $id . date('Y-m-d') . '/';
+    $dir = './Uploads/Picture/' . date('Y-m-d') . '/';
     //检测文件夹是否建立
     if (!file_exists($dir)) {
-        mkdir($dir);
+        mkdir($dir, '0777', true);
     }
     $content = file_get_contents($img);
-    file_put_contents($dir . '.jpg', $content);
+    file_put_contents($dir . $id . time() .'.jpg', $content);
 
     $data['path'] = $dir;
     $data['md5'] = md5_file($dir);
