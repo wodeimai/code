@@ -12,13 +12,21 @@
  */
 function save_jpg($img, $id)
 {
-    $dir = './Uploads/Picture/' . date('Y-m-d') . '/';
+    $dir = './Uploads/Picture/' . $id . date('Y-m-d') . '/';
     //检测文件夹是否建立
     if (!file_exists($dir)) {
         mkdir($dir);
     }
     $content = file_get_contents($img);
-    return file_put_contents($dir . $id . '.jpg', $content);
+    file_put_contents($dir . '.jpg', $content);
+
+    $data['path'] = $dir;
+    $data['md5'] = md5_file($dir);
+    $data['sha1'] = sha1_file($dir);
+    $data['status'] = 1;
+    $data['create_time'] = time();
+    $pic_id = M('picture')->add($data);
+    return $pic_id;
 }
 
 /**
