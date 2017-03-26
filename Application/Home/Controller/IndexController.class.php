@@ -14,6 +14,18 @@ class IndexController extends HomeController
     {
         echo "this is first page";
         log_debug('这是一个测试文件');
+        $maxid = 10;
+        $this->assign('maxid', $maxid);
+        $this->display();
     }
 
+    public function get_news()
+    {
+        // $model = M();
+        // $maxid = I('maxid');
+        // $map['id'] = array('gt', $maxid);
+        // $news_cnt = $model->where($map)->count();
+        $news_cnt = 1;
+        $this->ajaxReturn(array('cnt' => $news_cnt));
+    }
 }

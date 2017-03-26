@@ -44,4 +44,30 @@
 
         </section>
     </div>
+    <script type="text/javascript">
+        var maxid = "{$maxid}";
+        var cnt = 0;
+        var sh = setInterval(function(){
+            $.ajax({
+                url:"{:U('/home/index/get_news')}",
+                type:'post',
+                datatype:'json',
+                data:maxid,
+                success:function(data){
+                    console.log(cnt);
+                    if(data.cnt > 5){
+                        alert("有"+data.msg+"条新发布条目，点此查看");
+                    }
+                    if(data.cnt < 200){
+                        clearInterval(sh);
+                    }
+                }
+            });
+            cnt++;
+            if(cnt>60)
+            {
+                clearInterval(sh);
+            }
+        },120000)
+    </script>
 </block>
