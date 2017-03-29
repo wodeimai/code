@@ -80,4 +80,26 @@ class CollectController extends Controller
         dump($img);
         die;
     }
+
+    public function get_reurl()
+    {
+        $url = "http://guangdiu.com/go.php?id=3829933";
+        echo $this->curl_post($url);
+    }
+
+    // 获取网页跳转地址
+    public function curl_post($url)
+    {
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, "Fiddler");
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); // 获取转向后的内容
+        $data = curl_exec($ch);
+        $Headers = curl_getinfo($ch);
+        $url = substr($data, strpos($data, 'https'), strpos($data, '\';') - strpos($data, 'https'));
+        return $url;
+    }
 }
