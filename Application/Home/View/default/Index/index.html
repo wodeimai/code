@@ -1,73 +1,374 @@
-<extend name="Base/common"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-<block name="header">
-    <header class="jumbotron subhead" id="overview">
+<head>
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/normalize3.0.2.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/style.css">
+
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <script src="../js/ie9.js"></script>
+    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+    <!--head begin-->
+    <div class="head">
         <div class="container">
-            <h2>源自相同起点，演绎不同精彩！</h2>
-            <p class="lead"></p>
+            <div class="row ">
+            	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <div class="logo_seach">
+                        <h1>logo</h1>
+                        <div><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="__IMG__/seach.gif" alt="" /></a></p></div>
+                   </div>
+                </div>  
+            </div>
+               
         </div>
-    </header>
-</block>
-
-<block name="side">
-<!-- 左侧 nav
-================================================== -->
-    <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-            {:W('Category/lists', array(1, true))}
-        </ul>
     </div>
-</block>
+   
 
-<block name="body">
-    <div class="span9">
-        <!-- Contents
-        ================================================== -->
-        <section id="contents">
-            <article:list name="article" category="1" child="true">
-                <div class="">
-                    <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
-                </div>
-                <div>
-                    <p class="lead">{$article.description}</p>
-                </div>
-                <div>
-                    <span><a href="{:U('Article/detail?id='.$article['id'])}">查看全文</a></span>
-                    <span class="pull-right">
-                        <span class="author">{$article.uid|get_username}</span>
-                        <span>于 {$article.create_time|date='Y-m-d H:i',###}</span> 发表在 <span>
-                        <a href="{:U('Article/lists?category='.get_category_name($article['category_id']))}">{$article.category_id|get_category_title}</a></span> ( 阅读：{$article.view} )
-                    </span>
-                </div>
-                <hr/>
-            </article:list>
+    <!--head over-->
+    <div class="container">
+        <div class="row">
+            <!--  左侧 begin -->
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+            	<div class="tscroll">
+                	<div class="w1200">
+                        <div class="title">
+                            <ul><li class="hover"><a href="#">国内折扣</a></li>
+                                <li><a href="#">海淘折扣</a></li>
+                                <li><a href="#">小时风云榜</a></li>
+                                <li><a href="#">九块九</a></li>
+                            </ul>
+                            <p>近10天共收录19081条 / 第1页</p>
+                            
+                        </div>
+                        <div class="rseach"><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="__IMG__/seach2.gif" alt="" /></a></p></div>
+                    </div>
+               	</div>
+                
+                <!--  web begin -->
+                <div class="main_l">
+                	<div class="title2">
+                    	<ul class="hr">
+                        <li><span>类别：</span>
+                        <a href="#" class="hover">全部</a>
+                        <volist name="category" id="item">
+                            <a href="{$item.key}" >{$item.name}</a>
+                        </volist>
+                        </li>
+                        <li><span>商城：</span>
+                        <a href="#" class="hover">全部</a>
+                        
+                        <a href="#">京东商城</a>
 
-        </section>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="hour">
+                    	<div class="hr">
+                        	<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 hourdiv">
+                            	<p><img src="__IMG__/icon.gif" alt="" /></p>
+                                <h3>半小时内最热门</h3><h4>每5分钟刷新一次</h4>
+                            </div>
+                            <ul class="col-lg-10 col-md-10 col-sm-9 col-xs-12 hourdiv2">
+                            	<li><a href="#">
+                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
+                                    <h3><b>1.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
+                                    <h3><b>2.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
+                                    <h3><b>3.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
+                                    </a>
+                                </li>
+                            	<li><a href="#">
+                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
+                                    <h3><b>4.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
+                                    <h3><b>5.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
+                                    <h3><b>6.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋<span>1.8包邮</span></h3>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
+                                    <h3><b>7.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
+                                    <h3><b>8.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
+                                    <h3><b>9.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="imglist">
+                    	<ul>
+                        <volist name="list_data" id="item">
+                        <li class="hr">
+                                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                                    <p class="mb0"><a href="#"><img src="__ROOT__{$item.pic|get_cover='path'}" alt="" class="img" /></a></p>
+                                </div>
+                                <dl class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
+                                    <dt><h1><a href="#">{$item.title}</a></h1>
+                                    	 <h3>{$item.desc}...  <span><a href="#">完整阅读&gt;</a></span></h3>
+                                         <h4><span>{$item.source_time}</span> {$item.source_name}</h4>
+                                    </dt>
+                                    <dd>
+                                    	<p><a href="#" class="imglistsub">直达链接 &gt;</a></p>
+                                        <h3>商城：<span>{$item.}</span></h3>
+                                    </dd>
+                                </dl>
+                        	</li>
+                        </volist> 
+                        </ul>
+                    </div>
+                    
+                    <!--  web over -->
+                    
+                </div>
+                <!--  分页 begin -->
+                <div class="page"> {$_page|default=''} </div>
+                <!--  分页 over -->
+                
+                
+                <!--  phone begin -->
+                <div class="mphone">
+                	
+                    <div class="mhidden">
+                    	<li>
+                    		<h1>宁波 手工年糕 1000g 9.9包邮</h1>
+                            <dl>
+                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
+                                <dd>
+                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕</h3>
+                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
+                                </dd>
+                            </dl>
+                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
+                        </li>
+                    	<li>
+                    		<h1>宁手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 波 手工年糕 1000g 9.9包邮</h1>
+                            <dl>
+                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
+                                <dd>
+                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 工年糕宁波 手工年糕</h3>
+                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
+                                </dd>
+                            </dl>
+                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
+                        </li>
+                        <li>
+                    		<h1>宁波 手工年糕 1000g 9.9包邮</h1>
+                            <dl>
+                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
+                                <dd>
+                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕</h3>
+                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
+                                </dd>
+                            </dl>
+                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
+                        </li>
+                        <li>
+                    		<h1>宁波 手工年糕 1000g 9.9包邮</h1>
+                            <dl>
+                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
+                                <dd>
+                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕</h3>
+                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
+                                </dd>
+                            </dl>
+                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
+                        </li>
+                    	<li>
+                    		<h1>宁手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 波 手工年糕 1000g 9.9包邮</h1>
+                            <dl>
+                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
+                                <dd>
+                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 工年糕宁波 手工年糕</h3>
+                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
+                                </dd>
+                            </dl>
+                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
+                        </li>
+                        <li>
+                    		<h1>宁波 手工年糕 1000g 9.9包邮</h1>
+                            <dl>
+                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
+                                <dd>
+                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕</h3>
+                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
+                                </dd>
+                            </dl>
+                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
+                        </li>
+                    </div>
+                    <ul class="list"></ul>
+       			    <h2 class="moreload"><a class="moresub" href="javascript:;" onClick="upload.loadMore();">加载更多3条...</a></h2>
+                </div>
+                <!--  phone over -->
+                
+            </div>
+            
+            <!--  左侧 over -->
+            <!--  右侧 begin -->
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 main_r">
+            	<div class="title4">
+                	<div class="Bar"> 
+                        <div> 
+                        	<span style="width:50%;"></span>
+                        </div> 
+                    </div> 
+                    今日国内发布：785条 <span style="float:right;">预计1791条</span>
+                </div>
+            	<div class="main_l">
+                	
+                    <div class="remind">
+                    	<ul><li><p><img src="__IMG__/icon02.gif" alt="" /></p><h3><span>手机APP</span>iPhone & Android</h3></li>
+                        	<li><p><img src="__IMG__/icon03.gif" alt="" /></p><h3><span>浏览器插件</span>时时提醒好折扣</h3></li>
+                            <li><p><img src="__IMG__/icon04.gif" alt="" /></p><h3><span>一个框</span>网购最快入口</h3></li>
+                        
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                <div class="mt20 main_l">
+                	<div class="hr title3">常用网站导航</div>
+                    <ul class="partner">
+                    	<li class="hr"><img src="__IMG__/img03.gif" alt="" class="img" /></li>
+                        <li class="hr"><img src="__IMG__/img04.gif" alt="" class="img" /></li>
+                        <li class="hr"><img src="__IMG__/img03.gif" alt="" class="img" /></li>
+                        <li class="hr"><img src="__IMG__/img04.gif" alt="" class="img" /></li>
+                        <li class="hr"><img src="__IMG__/img03.gif" alt="" class="img" /></li>
+                        <li class="hr"><img src="__IMG__/img04.gif" alt="" class="img" /></li>
+                    </ul>
+                </div>
+                
+                
+                <div class="mt20 main_l">
+                	<div class="hr title3">分类/热词</div>
+                    <ul class="hotclass">
+                    	<li><span>&bull;<a href="#">母婴</a></span><a href="#">尿布</a><a href="#">奶粉</a><a href="#">奶瓶</a><a href="#">婴儿车</a><a href="#">吸奶器</a></li>
+                        <li><span>&bull;<a href="#">日用</a></span><a href="#">尿布</a><a href="#">奶粉</a><a href="#">奶瓶</a><a href="#">婴儿车</a><a href="#">吸奶器</a></li>
+                        <li><span>&bull;<a href="#">家电</a></span><a href="#">尿布</a><a href="#">奶粉</a><a href="#">奶瓶</a><a href="#">婴儿车</a><a href="#">吸奶器</a></li>
+                        <li><span>&bull;<a href="#">食品</a></span><a href="#">尿布</a><a href="#">奶粉</a><a href="#">奶瓶</a><a href="#">婴儿车</a><a href="#">吸奶器</a></li>
+                        <li><span>&bull;<a href="#">没装配饰</a></span><a href="#">尿布</a><a href="#">奶粉</a><a href="#">奶瓶</a><a href="#">婴儿车</a><a href="#">吸奶器</a></li>
+                        <li><span>&bull;<a href="#">户外活动</a></span><a href="#">尿布</a><a href="#">奶粉</a><a href="#">奶瓶</a><a href="#">婴儿车</a><a href="#">吸奶器</a></li>
+                    </ul>
+                </div>
+                
+                
+                <div class="mt20 main_l">
+                	<div class="hr title3">最热点击Top9<a href="#">全部&gt;</a></div>
+                    <ul class="hot">
+                    	<li><p><img src="__IMG__/1.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="__IMG__/2.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="__IMG__/3.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="__IMG__/4.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="__IMG__/5.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="__IMG__/6.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="__IMG__/7.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="__IMG__/8.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="__IMG__/9.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+            <!--  右侧 over -->
+        </div>
     </div>
-    <script type="text/javascript">
-        var maxid = "{$maxid}";
-        var cnt = 0;
-        var sh = setInterval(function(){
-            $.ajax({
-                url:"{:U('/home/index/get_news')}",
-                type:'post',
-                datatype:'json',
-                data:maxid,
-                success:function(data){
-                    console.log(cnt);
-                    if(data.cnt > 5){
-                        alert("有"+data.msg+"条新发布条目，点此查看");
-                    }
-                    if(data.cnt < 200){
-                        clearInterval(sh);
-                    }
-                }
-            });
-            cnt++;
-            if(cnt>60)
-            {
-                clearInterval(sh);
-            }
-        },120000)
-    </script>
-</block>
+    
+   
+    <!--  footer begin -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+        	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+            	<h3>关于我们</h3>
+                <p>我得买是全网首个将多家折扣资讯网站进行智能聚合的引擎，每天更新数据1500-3000条，与数据来源网站保持分钟级别的同步，让您在一站获得全网折扣信息。</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+            	<h3>官方微博</h3>
+                <p>我得买是全网首个将多家折扣资讯网站进行智能聚合的引擎，每天更新数据1500-3000条，与数据来源网站保持分钟级别的同步，让您在一站获得全网折扣信息。</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+            	<h3>微信公众号</h3>
+                <p>我得买是全网首个将多家折扣资讯网站进行智能聚合的引擎，每天更新数据1500-3000条，与数据来源网站保持分钟级别的同步，让您在一站获得全网折扣信息。</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+            	<h3>网站信息</h3>
+                <p>我得买是全网首个将多家折扣资讯网站进行智能聚合的引擎，每天更新数据1500-3000条，与数据来源网站保持分钟级别的同步，让您在一站获得全网折扣信息。</p>
+            </div>
+        </div>
+      </div>
+
+    </div>
+    <!--  footer over -->
+    <!--  head slide begin -->
+   
+    <!--  head slide over -->
+	<script type="text/javascript" src="__JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__JS__/main.js"></script>
+    <script>
+		var _content = []; //临时存储li循环内容
+		var upload = {
+			_default:3, //默认显示图片个数
+			_loading:3,  //每次点击按钮后加载的个数
+			init:function(){
+				var lis = $(".mphone .mhidden li");
+				$(".mphone ul.list").html("");
+				for(var n=0;n<upload._default;n++){
+					lis.eq(n).appendTo(".mphone ul.list");
+				}
+				
+				for(var i=upload._default;i<lis.length;i++){
+					_content.push(lis.eq(i));
+				}
+				$(".mphone .mhidden").html("");
+			},
+			loadMore:function(){
+				var mLis = $(".mphone ul.list li").length;
+				for(var i =0;i<upload._loading;i++){
+					var target = _content.shift();
+					if(!target){
+						$('.mphone .moreload').html("<p class='moresub'>全部加载完毕...</p>");
+						break;
+					}
+					$(".mphone ul.list").append(target);
+					
+				}
+			}
+		}
+		upload.init();
+	</script>
+
+</body>
+
+</html>

@@ -1,4 +1,6 @@
 #git gitignore
 /Runtime/*
+/Uploads/*
 /Application/Common/Conf/config.php
+/Application/User/Conf/config.php
 *.log
