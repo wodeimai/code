@@ -11,7 +11,11 @@
     <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="__CSS__/normalize3.0.2.min.css">
     <link rel="stylesheet" type="text/css" href="__CSS__/style.css">
-
+    <style>.aablock{
+    position:fixed;
+    top:30px;
+    width:270px;
+}</style>
     <!--[if lt IE 9]>
     <script src="../js/html5.js"></script>
     <script src="../js/ie9.js"></script>
@@ -195,7 +199,7 @@
                 </div>
                 
                 
-                <div class="mt20 main_l">
+                <div class="mt20 main_l aa">
                 	<div class="hr title3">最热点击Top9<a href="#">全部&gt;</a></div>
                     <ul class="hot">
                     	<li><p><img src="__IMG__/1.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
@@ -280,6 +284,20 @@
 			}
 		}
 		upload.init();
+
+
+        $(document).ready(function(e) {         
+            t = $('.aa').offset().top;            
+            $(window).scroll(function(e){
+                s = $(document).scrollTop();    
+                if(s > t){
+                    $('.aa').addClass('aablock');                                 
+                }else{
+                    $('.aa').removeClass('aablock');
+                }
+            })
+        });
+        
 	</script>
 
 </body>
