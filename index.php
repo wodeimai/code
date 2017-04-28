@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 
 if (version_compare(PHP_VERSION, '5.3.0', '<')) {
-    die('require PHP > 5.3.0 !');
+	die('require PHP > 5.3.0 !');
 }
 
 /**
@@ -25,9 +25,12 @@ define('SITE_PATH', dirname(__FILE__));
 define('APP_PATH', './Application/');
 
 if (!is_file(APP_PATH . 'User/Conf/config.php')) {
-    header('Location: ./install.php');
-    exit;
+	header('Location: ./install.php');
+	exit;
 }
+
+//url中屏蔽home
+define('BIND_MODULE', 'Home');
 
 /**
  * 缓存目录设置

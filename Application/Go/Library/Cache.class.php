@@ -47,7 +47,7 @@ class Cache {
 			return S('mall_name');
 		} else {
 			//反之则查找数据库赋值给缓存
-			$mall_name_list = M('wdm_mall')->where(array('type' => $type))->order('id desc')->select();
+			$mall_name_list = M('wdm_mall')->where(array('type' => $type))->order('id asc')->select();
 			if (!empty($mall_name_list)) {
 				S('mall_name', $mall_name_list);
 				return S('mall_name');
@@ -69,6 +69,7 @@ class Cache {
 		//log_debug("缓存" . var_export($mall_name));
 		if (in_array($name, $mall_name)) {
 			//如果找到则返回对应的KEY
+			log_debug('=============' . $name);
 			return array_keys($mall_name, $name);
 		} else {
 			$array = array(
@@ -82,11 +83,14 @@ class Cache {
 				$id = M('wdm_mall')->add($array);
 				if (!empty($id)) {
 					$array['id'] = $id;
+					log_info($mall_name);
 					array_push($mall_name, $array);
+					log_debug($mall_name);
 					S('mall_name', $mall_name);
 					return $id;
 				}
 			} else {
+				log_debug('查库得出id');
 				return $info['id'];
 			}
 		}

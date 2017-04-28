@@ -2,7 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title></title>
+    <title>{:C('WEB_SITE_TITLE')}</title>
+    <meta name="description" content="{:C('WEB_SITE_DESCRIPTION')}"/>
+    <meta name="keywords" content="{:C('WEB_SITE_KEYWORD')}"/>
+
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
@@ -41,12 +44,12 @@
             	<div class="tscroll">
                 	<div class="w1200">
                         <div class="title">
-                            <ul><li class="hover"><a href="#">国内折扣</a></li>
-                                <li><a href="#">海淘折扣</a></li>
-                                <li><a href="#">小时风云榜</a></li>
-                                <li><a href="#">九块九</a></li>
+                            <ul><li class="hover"><a href="/">国内折扣</a></li>
+                                <li><a href="/">海淘折扣</a></li>
+                                <!--li><a href="#">小时风云榜</a></li>
+                                <li><a href="#">九块九</a></li-->
                             </ul>
-                            <p>近10天共收录19081条 / 第1页</p>
+                            <p>近10天共收录19081条 / 第{:$_GET['p']?$_GET['p']:'1'}页</p>
                             
                         </div>
                         <div class="rseach"><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="__IMG__/seach2.gif" alt="" /></a></p></div>
@@ -71,85 +74,45 @@
                         </li>
                         </ul>
                     </div>
-                    <div class="hour">
+                    <!--div class="hour">
                     	<div class="hr">
                         	<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 hourdiv">
                             	<p><img src="__IMG__/icon.gif" alt="" /></p>
                                 <h3>半小时内最热门</h3><h4>每5分钟刷新一次</h4>
                             </div>
                             <ul class="col-lg-10 col-md-10 col-sm-9 col-xs-12 hourdiv2">
-                            	<li><a href="#">
-                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
-                                    <h3><b>1.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
-                                    </a>
-                                </li>
+                            	
                                 <li><a href="#">
                             		<p><img src="__IMG__/img01.gif" alt="" /></p>
-                                    <h3><b>2.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
+                                    <h3><b>1.</b>标题</h3>
                                     </a>
                                 </li>
-                                <li><a href="#">
-                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
-                                    <h3><b>3.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
-                                    </a>
-                                </li>
-                            	<li><a href="#">
-                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
-                                    <h3><b>4.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
-                                    </a>
-                                </li>
-                                <li><a href="#">
-                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
-                                    <h3><b>5.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
-                                    </a>
-                                </li>
-                                <li><a href="#">
-                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
-                                    <h3><b>6.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋<span>1.8包邮</span></h3>
-                                    </a>
-                                </li>
-                                <li><a href="#">
-                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
-                                    <h3><b>7.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
-                                    </a>
-                                </li>
-                                <li><a href="#">
-                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
-                                    <h3><b>8.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
-                                    </a>
-                                </li>
-                                <li><a href="#">
-                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
-                                    <h3><b>9.</b>跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋跑鞋</h3>
-                                    </a>
-                                </li>
+                                
                             </ul>
                         </div>
-                    </div>
+                    </div-->
                     <div class="imglist">
                     	<ul>
                         <volist name="list_data" id="item">
                         <li class="hr">
                                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                                    <p class="mb0"><a href="#"><img src="__ROOT__{$item.pic|get_cover='path'}" alt="" class="img" /></a></p>
+                                    <p class="mb0"><a href="{$item.from_id}"><img src="{$item.pic|get_cover='path'}" alt="" class="img" /></a></p>
                                 </div>
                                 <dl class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
-                                    <dt><h1><a href="#">{$item.title}</a></h1>
-                                    	 <h3>{$item.desc}...  <span><a href="#">完整阅读&gt;</a></span></h3>
+                                    <dt><h1><a href="{$item.from_id}">{$item.title}</a></h1>
+                                    	 <h3>{$item.desc}...  <span><a href="{$item.from_id}">完整阅读&gt;</a></span></h3>
                                          <h4><span>{$item.source_time}</span> {$item.source_name}</h4>
                                     </dt>
                                     <dd>
                                     	<p><a href="#" class="imglistsub">直达链接 &gt;</a></p>
-                                        <h3>商城：<span>{$item.}</span></h3>
+                                        <h3><if condition="$item['target']">商城：<span>{$item.target}</span></if></h3>
                                     </dd>
                                 </dl>
                         	</li>
                         </volist> 
                         </ul>
                     </div>
-                    
                     <!--  web over -->
-                    
                 </div>
                 <!--  分页 begin -->
                 <div class="page"> {$_page|default=''} </div>
@@ -160,75 +123,22 @@
                 <div class="mphone">
                 	
                     <div class="mhidden">
-                    	<li>
-                    		<h1>宁波 手工年糕 1000g 9.9包邮</h1>
-                            <dl>
-                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
-                                <dd>
-                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕</h3>
-                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
-                                </dd>
-                            </dl>
-                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
-                        </li>
-                    	<li>
-                    		<h1>宁手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 波 手工年糕 1000g 9.9包邮</h1>
-                            <dl>
-                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
-                                <dd>
-                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 工年糕宁波 手工年糕</h3>
-                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
-                                </dd>
-                            </dl>
-                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
-                        </li>
+                    	<volist name="list_data" id="item">
                         <li>
-                    		<h1>宁波 手工年糕 1000g 9.9包邮</h1>
+                    		<h1><a href="{$item.from_id}">{$item.title}</a></h1>
                             <dl>
-                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
+                            	<dt><img src="{$item.pic|get_cover='path'}" alt="" class="img" /></dt>
                                 <dd>
-                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕</h3>
-                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
+                                	<h3>{$item.desc}...</h3>
+                                    <h4><if condition="$item['target']"><span>{$item.target}</span></if>{$item.source_time} {$item.source_name}</h4>
                                 </dd>
                             </dl>
                             <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
                         </li>
-                        <li>
-                    		<h1>宁波 手工年糕 1000g 9.9包邮</h1>
-                            <dl>
-                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
-                                <dd>
-                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕</h3>
-                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
-                                </dd>
-                            </dl>
-                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
-                        </li>
-                    	<li>
-                    		<h1>宁手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 波 手工年糕 1000g 9.9包邮</h1>
-                            <dl>
-                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
-                                <dd>
-                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 工年糕宁波 手工年糕</h3>
-                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
-                                </dd>
-                            </dl>
-                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
-                        </li>
-                        <li>
-                    		<h1>宁波 手工年糕 1000g 9.9包邮</h1>
-                            <dl>
-                            	<dt><img src="__IMG__/img02.gif" alt="" class="img" /></dt>
-                                <dd>
-                                	<h3>宁波 手工年糕宁波 手工年糕宁波 手工年糕宁波 手工年糕</h3>
-                                    <h4><span>天猫</span>4分钟前从 超值分享汇 同步</h4>
-                                </dd>
-                            </dl>
-                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
-                        </li>
+                    	</volist> 
                     </div>
                     <ul class="list"></ul>
-       			    <h2 class="moreload"><a class="moresub" href="javascript:;" onClick="upload.loadMore();">加载更多3条...</a></h2>
+       			    <h2 class="moreload"><a class="moresub" href="javascript:;" onClick="upload.loadMore();">加载更多5条...</a></h2>
                 </div>
                 <!--  phone over -->
                 
@@ -243,9 +153,9 @@
                         	<span style="width:50%;"></span>
                         </div> 
                     </div> 
-                    今日国内发布：785条 <span style="float:right;">预计1791条</span>
+                    今日{$type}发布：{$today_count}条 <span style="float:right;">预计1791条</span>
                 </div>
-            	<div class="main_l">
+            	<!--div class="main_l">
                 	
                     <div class="remind">
                     	<ul><li><p><img src="__IMG__/icon02.gif" alt="" /></p><h3><span>手机APP</span>iPhone & Android</h3></li>
@@ -254,18 +164,20 @@
                         
                         </ul>
                     </div>
-                </div>
+                </div-->
                 
                 
                 <div class="mt20 main_l">
                 	<div class="hr title3">常用网站导航</div>
                     <ul class="partner">
-                    	<li class="hr"><img src="__IMG__/img03.gif" alt="" class="img" /></li>
-                        <li class="hr"><img src="__IMG__/img04.gif" alt="" class="img" /></li>
-                        <li class="hr"><img src="__IMG__/img03.gif" alt="" class="img" /></li>
-                        <li class="hr"><img src="__IMG__/img04.gif" alt="" class="img" /></li>
-                        <li class="hr"><img src="__IMG__/img03.gif" alt="" class="img" /></li>
-                        <li class="hr"><img src="__IMG__/img04.gif" alt="" class="img" /></li>
+                    	<li class="hr"><a href="http://www.jd.com" target="_blank"><img src="__IMG__/mall/jd.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.z.cn" target="_blank"><img src="__IMG__/mall/z.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.suning.com" target="_blank"><img src="__IMG__/mall/suning.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.kaola.com/" target="_blank"><img src="__IMG__/mall/kaola.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.dangdang.com" target="_blank"><img src="__IMG__/mall/dd.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.yhd.com" target="_blank"><img src="__IMG__/mall/1.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://you.163.com" target="_blank"><img src="__IMG__/mall/yanxuan.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.gome.com.cn" target="_blank"><img src="__IMG__/mall/guomei.png" alt="" class="img" /></a></li>
                     </ul>
                 </div>
                 
@@ -339,8 +251,8 @@
     <script>
 		var _content = []; //临时存储li循环内容
 		var upload = {
-			_default:3, //默认显示图片个数
-			_loading:3,  //每次点击按钮后加载的个数
+			_default:5, //默认显示图片个数
+			_loading:5,  //每次点击按钮后加载的个数
 			init:function(){
 				var lis = $(".mphone .mhidden li");
 				$(".mphone ul.list").html("");
@@ -358,7 +270,8 @@
 				for(var i =0;i<upload._loading;i++){
 					var target = _content.shift();
 					if(!target){
-						$('.mphone .moreload').html("<p class='moresub'>全部加载完毕...</p>");
+                        $('.mphone .moreload').html("<p class='moresub'>全部加载完毕...</p>");
+						//$('.mphone .moreload').html("<div class='page'> {$_page|default=''} </div>");
 						break;
 					}
 					$(".mphone ul.list").append(target);

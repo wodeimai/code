@@ -26,7 +26,11 @@ class IndexController extends Controller {
 		exit;
 	}
 
-	//
+	//TODO删除10天以上的数据
+	public function del_ten_days_data() {
+
+	}
+
 	/**
 	 *  临时，删除指定名称的缓存
 	 *  cate_list    产品分类
