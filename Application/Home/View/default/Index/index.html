@@ -49,11 +49,11 @@
                 	<div class="w1200">
                         <div class="title">
                             <ul><li class="hover"><a href="/">国内折扣</a></li>
-                                <li><a href="/">海淘折扣</a></li>
-                                <!--li><a href="#">小时风云榜</a></li>
+                                <!--li><a href="/">海淘折扣</a></li>
+                                <li><a href="#">小时风云榜</a></li>
                                 <li><a href="#">九块九</a></li-->
                             </ul>
-                            <p>近10天共收录19081条 / 第{:$_GET['p']?$_GET['p']:'1'}页</p>
+                            <p>近10天共收录{$total_count}条 / 第{:$_GET['p']?$_GET['p']:'1'}页</p>
                             
                         </div>
                         <div class="rseach"><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="__IMG__/seach2.gif" alt="" /></a></p></div>
@@ -72,9 +72,9 @@
                         </li>
                         <li><span>商城：</span>
                         <a href="#" class="hover">全部</a>
-                        
-                        <a href="#">京东商城</a>
-
+                        <volist name="mall_list" id="item">
+                            <a href="{$item.id}">{$item.mall_name}</a>
+                        </volist>
                         </li>
                         </ul>
                     </div>
@@ -154,10 +154,10 @@
             	<div class="title4">
                 	<div class="Bar"> 
                         <div> 
-                        	<span style="width:50%;"></span>
+                        	<span style="width:{:floor($today_count/$total*100)}%;"></span>
                         </div> 
                     </div> 
-                    今日{$type}发布：{$today_count}条 <span style="float:right;">预计1791条</span>
+                    今日{$type}发布：{$today_count}条 <span style="float:right;">预计{$total}条</span>
                 </div>
             	<!--div class="main_l">
                 	
@@ -299,6 +299,44 @@
         });
         
 	</script>
+
+
+
+    <script type='text/javascript'>
+    var maxid=30;
+    var cnt=0;
+    var sh=setInterval(function(){
+    $.get("index.php?s=Home/Index/get_news/maxid="+maxid, function(data){
+        if(data>5)
+        {
+            var hrefhtml="有"+data+"条新发布条目，点此查看 >";
+            var hrefattrheadbar="./?kf=hb&lid="+maxid;
+            var hrefattrtip="./?kf=tip&lid="+maxid;
+            $("#feednotifyword").html(hrefhtml);
+            $("#feednotify").attr("href",hrefattrheadbar);
+            $("#feednotify").show();
+            $("#dealheadnotifydiv").html(hrefhtml);
+            $("#dealheadnotifydiv").attr("href",hrefattrtip);
+            $("#dealheadnotifydiv").show();
+            $("#dealheadnotifyclose").show();
+            var curtitle="{:C('WEB_SITE_TITLE')}";
+            var notifytitle='('+data+'条更新) '+curtitle;
+            $(document).attr("title",notifytitle);
+            $(".dealheadnotifydot").show();
+            if(data>200)
+            {
+                clearInterval(sh);
+            }
+        }
+        //console.log(data);
+    });
+    cnt++;
+    if(cnt>60)
+    {
+        clearInterval(sh);
+    }
+},120000);
+</script>
 
 </body>
 
