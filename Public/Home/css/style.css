@@ -43,9 +43,9 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	width:30%;
 }
 .logo_seach div{	
-	float:left;
+	float:right;
 	border:1px solid #dfdfdf;
-	width:70%;
+	width:50%;
 	height:35px;
 	margin-top:5px;
 }
