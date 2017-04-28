@@ -381,18 +381,18 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	left:0;
 	margin:0;
 	background:#ff6537;
+	height:50px;
 }
+.uptext2{display:none;}
 .tscrollblock .w1200{width:1200px; margin:0px auto;}
 .tscrollblock .title{ margin:0; width:75%; float:left; padding:0px 15px;}
 .tscrollblock .rseach{width:25%; float:left;padding:0px 15px; display:block;}
 .tscrollblock .rseach input{width:80%; float:left; margin-top:10px; height:30px; line-height:30px; border:1px solid #f0f0f0;}
 .tscrollblock .rseach p{width:20%; float:left; text-align:center;margin:10px 0 0 0px;}
-
-
-
-
-
-
+.tscrollblock .uptext2{display:inline-block; text-align:center; background:#ffd9d3; height:40px;line-height:40px;  margin:0px auto;  border:1px solid #fdbcb2; border-top:0;}
+.tscrollblock .uptext2 a{color:#FF5400; text-decoration:underline; padding:0px 10px;}
+.tscrollblock .uptext2 span{border-left:1px solid #fdbcb2; display:inline-block; color:#999;}
+.tscrollblock .uptext2 span a{color:#999;}
 .mlist{
 	overflow:hidden;
 }
@@ -464,6 +464,19 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	text-align:center;
 	margin:30px 0;
 }
+.uptext{
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	background:#ffd5c8;
+	color:#FF5400;
+}
+.uptext a:link,.uptext a:visited,.uptext a:hover{color:#FF5400;}
+.aablock{
+    position:fixed;
+    top:50px;
+    width:270px;
+}
 
 @media (min-width: 1200px){
 	.mphone{display:none;}
@@ -475,9 +488,10 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	.hot h3{max-height:54px; line-height:18px; overflow:hidden;}
 	.mphone{display:none;}
 	.tscrollblock .w1200{width:100%;}
+	.aablock{width:210px;}
 }
 @media only screen and (max-width:769px) and (min-width:640px){
-	.imglistsub{padding:10px 5px;}
+	.imglistsub{padding:10px 5px;font-size:12px;}
 	.page span,.page a{padding:0px 12px; line-height:40px;}
 	.hot h3{max-height:54px; line-height:18px; overflow:hidden;}
 	.mphone{display:none;}
@@ -486,6 +500,7 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	.title4 span{display:none;}
 	.mlistnr h1 div{width:80%;}
 	.mlistnr h1 p{width:20%;}
+	.aablock{width:155px;}
 }
 @media (max-width: 640px){ 
 	body{background:#fff;}
@@ -511,6 +526,7 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	.mhidden{display:none;}
 	.moresub{background:#FF5400; display:inline-block;color:#fff; font-size:14px; padding:10px 20px; margin-left:10px;}
 	.moresub:link,.moresub:visited,.moresub:hover{color:#fff; text-decoration:none;}
+	.moresub a:link,.moresub a:visited,.moresub a:hover{color:#fff; text-decoration:none;}
 	.moreload{border-top:1px solid #f0f0f0; padding:20px 0; text-align:center; margin:0;}
 	.footer{border-top:1px solid #f0f0f0;}
 	.tscrollblock .w1200{width:100%;}
@@ -519,6 +535,7 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	.tscrollblock .title{width:100%;}
 	.mlistnr h1 div{width:100%;}
 	.none{display:none;}
+	.tscrollblock .uptext2{font-size:14px;}
 }
 
 	

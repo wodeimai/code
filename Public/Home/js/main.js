@@ -1,12 +1,8 @@
 // JavaScript Document
-
 $(function(){
-	
 
 	var oH = $(window).height();	//获取屏幕高度
 	    oW = $(window).width();	//获取屏幕宽度
-		
-	
 	$(window).scroll(function(){
 
 		var oH = $(window).height();
@@ -16,16 +12,7 @@ $(function(){
 		}else{
 			$(".tscroll").removeClass('tscrollblock')
 		}
-	});
-	
-	
-	
-
-	
-	
-	
-	
-		  
+	});  
 	//列表背景颜色变化
 	$('.imglist li').hover(function(){
 		$(this).css('background','#fafafa');

@@ -11,11 +11,6 @@
     <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="__CSS__/normalize3.0.2.min.css">
     <link rel="stylesheet" type="text/css" href="__CSS__/style.css">
-    <style>.aablock{
-    position:fixed;
-    top:30px;
-    width:270px;
-}</style>
     <!--[if lt IE 9]>
     <script src="../js/html5.js"></script>
     <script src="../js/ie9.js"></script>
@@ -54,7 +49,9 @@
                                 <li><a href="#">九块九</a></li-->
                             </ul>
                             <p>近10天共收录{$total_count}条 / 第{:$_GET['p']?$_GET['p']:'1'}页</p>
-                            
+                            <div class="clearfix"></div>
+                            <div style="text-align:center;">
+                            <div class="uptext2"  style="display: none;"><a href="#">有13条新发布条目，点此查看 &gt;</a><span><a href="#">关闭提示</a></span></div></div>
                         </div>
                         <div class="rseach"><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="__IMG__/seach2.gif" alt="" /></a></p></div>
                     </div>
@@ -95,6 +92,7 @@
                             </ul>
                         </div>
                     </div-->
+                    <div class="uptext" style="display: none;">&bull; <a href="#">有13条新发布条目，点此查看 &gt;</a></div>
                     <div class="imglist">
                     	<ul>
                         <volist name="list_data" id="item">
@@ -271,10 +269,10 @@
 			},
 			loadMore:function(){
 				var mLis = $(".mphone ul.list li").length;
-				for(var i =0;i<upload._loading;i++){
+				for(var i =0;i<=upload._loading;i++){
 					var target = _content.shift();
 					if(!target){
-                        $('.mphone .moreload').html("<p class='moresub'>全部加载完毕...</p>");
+                        $('.mphone .moreload').html("<p class='moresub'><a href='/Index/index/p/{:$_GET['p']?$_GET['p']+1:2}.html'>下一页</a></p>");
 						//$('.mphone .moreload').html("<div class='page'> {$_page|default=''} </div>");
 						break;
 					}
