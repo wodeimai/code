@@ -21,6 +21,7 @@ class IndexController extends Controller
 
     public function index()
     {
+        echo "string";exit;
         $html = $this->guangdiu->init();
         dump($html);
         exit;

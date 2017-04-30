@@ -1,16 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>{:C('WEB_SITE_TITLE')}</title>
-    <meta name="description" content="{:C('WEB_SITE_DESCRIPTION')}"/>
-    <meta name="keywords" content="{:C('WEB_SITE_KEYWORD')}"/>
+    <title><?php echo C('WEB_SITE_TITLE');?></title>
+    <meta name="description" content="<?php echo C('WEB_SITE_DESCRIPTION');?>"/>
+    <meta name="keywords" content="<?php echo C('WEB_SITE_KEYWORD');?>"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-     <link rel="shortcut icon" href="__IMG__/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="__CSS__/normalize3.0.2.min.css">
-    <link rel="stylesheet" type="text/css" href="__CSS__/style.css">
+     <link rel="shortcut icon" href="/Public/Home/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/Public/Home/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/Home/css/normalize3.0.2.min.css">
+    <link rel="stylesheet" type="text/css" href="/Public/Home/css/style.css">
     <!--[if lt IE 9]>
     <script src="../js/html5.js"></script>
     <script src="../js/ie9.js"></script>
@@ -25,8 +25,8 @@
             <div class="row ">
             	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                    <div class="logo_seach">
-                    <h1><a href="/"><img src="__IMG__/logo.png"  height="50"></a></h1>
-                        <div><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="__IMG__/seach.gif" alt="" /></a></p></div>
+                    <h1><a href="/"><img src="/Public/Home/images/logo.png"  height="50"></a></h1>
+                        <div><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="/Public/Home/images/seach.gif" alt="" /></a></p></div>
                    </div>
                 </div>  
             </div>
@@ -48,14 +48,14 @@
                                 <li><a href="#">小时风云榜</a></li>
                                 <li><a href="#">九块九</a></li-->
                             </ul>
-                            <p>近10天共收录{$total_count}条 / 第{:$_GET['p']?$_GET['p']:'1'}页</p>
+                            <p>近10天共收录<?php echo ($total_count); ?>条 / 第<?php echo $_GET['p']?$_GET['p']:'1';?>页</p>
                             <div class="clearfix"></div>
                             <div style="text-align:center;">
-                            <div id="uptext2" class="uptext2"><a href="http://www.wodeimai.com">有新发布条目，点此刷新...</a><span><a href="#">关闭提示</a></span></div>
+                            <div id="uptext2" class="uptext2" style="display: none;"><a href="http://www.wodeimai.com">有新发布条目，点此刷新...</a><span><a href="#">关闭提示</a></span></div>
                             </a>
                             </div>
                         </div>
-                        <div class="rseach"><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="__IMG__/seach2.gif" alt="" /></a></p></div>
+                        <div class="rseach"><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="/Public/Home/images/seach2.gif" alt="" /></a></p></div>
                     </div>
                	</div>
                 
@@ -65,28 +65,24 @@
                     	<ul class="hr">
                         <li><span>类别：</span>
                         <a href="#" class="hover">全部</a>
-                        <volist name="category" id="item">
-                            <a href="{$item.key}" >{$item.name}</a>
-                        </volist>
+                        <?php if(is_array($category)): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><a href="<?php echo ($item["key"]); ?>" ><?php echo ($item["name"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
                         </li>
                         <li><span>商城：</span>
                         <a href="#" class="hover">全部</a>
-                        <volist name="mall_list" id="item">
-                            <a href="{$item.id}">{$item.mall_name}</a>
-                        </volist>
+                        <?php if(is_array($mall_list)): $i = 0; $__LIST__ = $mall_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><a href="<?php echo ($item["id"]); ?>"><?php echo ($item["mall_name"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
                         </li>
                         </ul>
                     </div>
                     <!--div class="hour">
                     	<div class="hr">
                         	<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 hourdiv">
-                            	<p><img src="__IMG__/icon.gif" alt="" /></p>
+                            	<p><img src="/Public/Home/images/icon.gif" alt="" /></p>
                                 <h3>半小时内最热门</h3><h4>每5分钟刷新一次</h4>
                             </div>
                             <ul class="col-lg-10 col-md-10 col-sm-9 col-xs-12 hourdiv2">
                             	
                                 <li><a href="#">
-                            		<p><img src="__IMG__/img01.gif" alt="" /></p>
+                            		<p><img src="/Public/Home/images/img01.gif" alt="" /></p>
                                     <h3><b>1.</b>标题</h3>
                                     </a>
                                 </li>
@@ -97,29 +93,27 @@
                     <div class="uptext" id="uptext" style="display: none;">&bull; <a href="#">有新发布条目，点此查看 &gt;</a></div>
                     <div class="imglist">
                     	<ul>
-                        <volist name="list_data" id="item">
-                        <li class="hr">
+                        <?php if(is_array($list_data)): $i = 0; $__LIST__ = $list_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><li class="hr">
                                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                                    <p class="mb0"><a href="{$item.from_id}"><img src="{$item.pic|get_cover='path'}" alt="" class="img" /></a></p>
+                                    <p class="mb0"><a href="<?php echo ($item["from_id"]); ?>"><img src="<?php echo (get_cover($item["pic"],'path')); ?>" alt="" class="img" /></a></p>
                                 </div>
                                 <dl class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
-                                    <dt><h1><a href="{$item.from_id}">{$item.title}</a></h1>
-                                    	 <h3>{$item.desc}...  <span><a href="{$item.from_id}">完整阅读&gt;</a></span></h3>
-                                         <h4><span>{$item.source_time}</span> {$item.source_name}</h4>
+                                    <dt><h1><a href="<?php echo ($item["from_id"]); ?>"><?php echo ($item["title"]); ?></a></h1>
+                                    	 <h3><?php echo ($item["desc"]); ?>...  <span><a href="<?php echo ($item["from_id"]); ?>">完整阅读&gt;</a></span></h3>
+                                         <h4><span><?php echo ($item["source_time"]); ?></span> <?php echo ($item["source_name"]); ?></h4>
                                     </dt>
                                     <dd>
                                     	<p><a href="#" class="imglistsub">直达链接 &gt;</a></p>
-                                        <h3><if condition="$item['target']">商城：<span>{$item.target}</span></if></h3>
+                                        <h3><?php if($item['target']): ?>商城：<span><?php echo ($item["target"]); ?></span><?php endif; ?></h3>
                                     </dd>
                                 </dl>
-                        	</li>
-                        </volist> 
+                        	</li><?php endforeach; endif; else: echo "" ;endif; ?> 
                         </ul>
                     </div>
                     <!--  web over -->
                 </div>
                 <!--  分页 begin -->
-                <div class="page"> {$_page|default=''} </div>
+                <div class="page"> <?php echo ((isset($_page) && ($_page !== ""))?($_page):''); ?> </div>
                 <!--  分页 over -->
                 
                 
@@ -127,19 +121,17 @@
                 <div class="mphone">
                 	
                     <div class="mhidden">
-                    	<volist name="list_data" id="item">
-                        <li>
-                    		<h1><a href="{$item.from_id}">{$item.title}</a></h1>
+                    	<?php if(is_array($list_data)): $i = 0; $__LIST__ = $list_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><li>
+                    		<h1><a href="<?php echo ($item["from_id"]); ?>"><?php echo ($item["title"]); ?></a></h1>
                             <dl>
-                            	<dt><img src="{$item.pic|get_cover='path'}" alt="" class="img" /></dt>
+                            	<dt><img src="<?php echo (get_cover($item["pic"],'path')); ?>" alt="" class="img" /></dt>
                                 <dd>
-                                	<h3>{$item.desc}...</h3>
-                                    <h4><if condition="$item['target']"><span>{$item.target}</span></if>{$item.source_time} {$item.source_name}</h4>
+                                	<h3><?php echo ($item["desc"]); ?>...</h3>
+                                    <h4><?php if($item['target']): ?><span><?php echo ($item["target"]); ?></span><?php endif; echo ($item["source_time"]); ?> <?php echo ($item["source_name"]); ?></h4>
                                 </dd>
                             </dl>
                             <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
-                        </li>
-                    	</volist> 
+                        </li><?php endforeach; endif; else: echo "" ;endif; ?> 
                     </div>
                     <ul class="list"></ul>
        			    <h2 class="moreload"><a class="moresub" href="javascript:;" onClick="upload.loadMore();">加载更多5条...</a></h2>
@@ -154,17 +146,17 @@
             	<div class="title4">
                 	<div class="Bar"> 
                         <div> 
-                        	<span style="width:{:floor($today_count/$total*100)}%;"></span>
+                        	<span style="width:<?php echo floor($today_count/$total*100);?>%;"></span>
                         </div> 
                     </div> 
-                    今日{$type}发布：{$today_count}条 <span style="float:right;">预计{$total}条</span>
+                    今日<?php echo ($type); ?>发布：<?php echo ($today_count); ?>条 <span style="float:right;">预计<?php echo ($total); ?>条</span>
                 </div>
             	<!--div class="main_l">
                 	
                     <div class="remind">
-                    	<ul><li><p><img src="__IMG__/icon02.gif" alt="" /></p><h3><span>手机APP</span>iPhone & Android</h3></li>
-                        	<li><p><img src="__IMG__/icon03.gif" alt="" /></p><h3><span>浏览器插件</span>时时提醒好折扣</h3></li>
-                            <li><p><img src="__IMG__/icon04.gif" alt="" /></p><h3><span>一个框</span>网购最快入口</h3></li>
+                    	<ul><li><p><img src="/Public/Home/images/icon02.gif" alt="" /></p><h3><span>手机APP</span>iPhone & Android</h3></li>
+                        	<li><p><img src="/Public/Home/images/icon03.gif" alt="" /></p><h3><span>浏览器插件</span>时时提醒好折扣</h3></li>
+                            <li><p><img src="/Public/Home/images/icon04.gif" alt="" /></p><h3><span>一个框</span>网购最快入口</h3></li>
                         
                         </ul>
                     </div>
@@ -174,14 +166,14 @@
                 <div class="mt20 main_l">
                 	<div class="hr title3">常用网站导航</div>
                     <ul class="partner">
-                    	<li class="hr"><a href="http://www.jd.com" target="_blank"><img src="__IMG__/mall/jd.png" alt="" class="img" /></a></li>
-                        <li class="hr"><a href="http://www.z.cn" target="_blank"><img src="__IMG__/mall/z.png" alt="" class="img" /></a></li>
-                        <li class="hr"><a href="http://www.suning.com" target="_blank"><img src="__IMG__/mall/suning.png" alt="" class="img" /></a></li>
-                        <li class="hr"><a href="http://www.kaola.com/" target="_blank"><img src="__IMG__/mall/kaola.png" alt="" class="img" /></a></li>
-                        <li class="hr"><a href="http://www.dangdang.com" target="_blank"><img src="__IMG__/mall/dd.png" alt="" class="img" /></a></li>
-                        <li class="hr"><a href="http://www.yhd.com" target="_blank"><img src="__IMG__/mall/1.png" alt="" class="img" /></a></li>
-                        <li class="hr"><a href="http://you.163.com" target="_blank"><img src="__IMG__/mall/yanxuan.png" alt="" class="img" /></a></li>
-                        <li class="hr"><a href="http://www.gome.com.cn" target="_blank"><img src="__IMG__/mall/guomei.png" alt="" class="img" /></a></li>
+                    	<li class="hr"><a href="http://www.jd.com" target="_blank"><img src="/Public/Home/images/mall/jd.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.z.cn" target="_blank"><img src="/Public/Home/images/mall/z.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.suning.com" target="_blank"><img src="/Public/Home/images/mall/suning.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.kaola.com/" target="_blank"><img src="/Public/Home/images/mall/kaola.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.dangdang.com" target="_blank"><img src="/Public/Home/images/mall/dd.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.yhd.com" target="_blank"><img src="/Public/Home/images/mall/1.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://you.163.com" target="_blank"><img src="/Public/Home/images/mall/yanxuan.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.gome.com.cn" target="_blank"><img src="/Public/Home/images/mall/guomei.png" alt="" class="img" /></a></li>
                     </ul>
                 </div>
                 
@@ -202,15 +194,15 @@
                 <div class="mt20 main_l aa">
                 	<div class="hr title3">最热点击Top9<a href="#">全部&gt;</a></div>
                     <ul class="hot">
-                    	<li><p><img src="__IMG__/1.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/2.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/3.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/4.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/5.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/6.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/7.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/8.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/9.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                    	<li><p><img src="/Public/Home/images/1.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="/Public/Home/images/2.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="/Public/Home/images/3.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="/Public/Home/images/4.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="/Public/Home/images/5.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="/Public/Home/images/6.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="/Public/Home/images/7.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="/Public/Home/images/8.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                        <li><p><img src="/Public/Home/images/9.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
                         
                     </ul>
                 </div>
@@ -249,9 +241,9 @@
     <!--  head slide begin -->
    
     <!--  head slide over -->
-	<script type="text/javascript" src="__JS__/jquery.min.js"></script>
-    <script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
-    <script type="text/javascript" src="__JS__/main.js"></script>
+	<script type="text/javascript" src="/Public/Home/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/Public/Home/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Public/Home/js/main.js"></script>
     <script>
 		var _content = []; //临时存储li循环内容
 		var upload = {
@@ -274,8 +266,8 @@
 				for(var i =0;i<=upload._loading;i++){
 					var target = _content.shift();
 					if(!target){
-                        $('.mphone .moreload').html("<p class='moresub'><a href='/Index/index/p/{:$_GET['p']?$_GET['p']+1:2}.html'>下一页</a></p>");
-						//$('.mphone .moreload').html("<div class='page'> {$_page|default=''} </div>");
+                        $('.mphone .moreload').html("<p class='moresub'><a href='/Index/index/p/<?php echo $_GET['p']?$_GET['p']+1:2;?>.html'>下一页</a></p>");
+						//$('.mphone .moreload').html("<div class='page'> <?php echo ((isset($_page) && ($_page !== ""))?($_page):''); ?> </div>");
 						break;
 					}
 					$(".mphone ul.list").append(target);
@@ -303,7 +295,7 @@
 
 
     <script type='text/javascript'>
-    var maxid={$big_id};
+    var maxid=<?php echo ($big_id); ?>;
     var cnt=0;
     var sh=setInterval(function(){
     $.get("index.php?s=Home/Index/get_news/maxid/"+maxid, function(data){
@@ -311,10 +303,11 @@
         {
             var hrefhtml_s="<a href='/'>有"+data.cnt+"条新发布条目，点此查看 </a><span><a href='#'>关闭提示</a></span>";
             $("#uptext2").html(hrefhtml_s);
+            $("#uptext2").show();
             var hrefhtml_b="&bull; <a href='/'>有"+data.cnt+"条新发布条目，点此查看 &gt;</a>";
             $("#uptext").html(hrefhtml_b);
             $("#uptext").show();
-            var curtitle="{:C('WEB_SITE_TITLE')}";
+            var curtitle="<?php echo C('WEB_SITE_TITLE');?>";
             var notifytitle='('+data.cnt+'条更新) '+curtitle;
             $(document).attr("title",notifytitle);
             

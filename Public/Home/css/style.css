@@ -383,7 +383,7 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	background:#ff6537;
 	height:50px;
 }
-.uptext2{display:none;}
+.uptext2 {display: none;}
 .tscrollblock .w1200{width:1200px; margin:0px auto;}
 .tscrollblock .title{ margin:0; width:75%; float:left; padding:0px 15px;}
 .tscrollblock .rseach{width:25%; float:left;padding:0px 15px; display:block;}
