@@ -51,8 +51,7 @@
                             <p>近10天共收录{$total_count}条 / 第{:$_GET['p']?$_GET['p']:'1'}页</p>
                             <div class="clearfix"></div>
                             <div style="text-align:center;">
-                            <div id="uptext2" class="uptext2"><a href="http://www.wodeimai.com">有新发布条目，点此刷新...</a><span><a href="#">关闭提示</a></span></div>
-                            </a>
+                            <div id="uptext2" class="uptext2"></div>
                             </div>
                         </div>
                         <div class="rseach"><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="__IMG__/seach2.gif" alt="" /></a></p></div>
@@ -100,15 +99,15 @@
                         <volist name="list_data" id="item">
                         <li class="hr">
                                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                                    <p class="mb0"><a href="{$item.from_id}"><img src="{$item.pic|get_cover='path'}" alt="" class="img" /></a></p>
+                                    <p class="mb0"><a href="/index/info/id/{$item.id}" target="_blank"><img src="{$item.pic|get_cover='path'}" alt="" class="img" /></a></p>
                                 </div>
                                 <dl class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
-                                    <dt><h1><a href="{$item.from_id}">{$item.title}</a></h1>
-                                    	 <h3>{$item.desc}...  <span><a href="{$item.from_id}">完整阅读&gt;</a></span></h3>
+                                    <dt><h1><a href="/index/info/id/{$item.id}" target="_blank">{$item.title}</a></h1>
+                                    	 <h3>{$item.desc}...  <span><a href="/index/info/id/{$item.id}">完整阅读&gt;</a></span></h3>
                                          <h4><span>{$item.source_time}</span> {$item.source_name}</h4>
                                     </dt>
                                     <dd>
-                                    	<p><a href="#" class="imglistsub">直达链接 &gt;</a></p>
+                                    	<p><a href="/index/go/id/{$item.id}" target="_blank" class="imglistsub">直达链接 &gt;</a></p>
                                         <h3><if condition="$item['target']">商城：<span>{$item.target}</span></if></h3>
                                     </dd>
                                 </dl>
@@ -129,7 +128,7 @@
                     <div class="mhidden">
                     	<volist name="list_data" id="item">
                         <li>
-                    		<h1><a href="{$item.from_id}">{$item.title}</a></h1>
+                    		<h1><a href="/index/info/id/{$item.id}" target="_blank">{$item.title}</a></h1>
                             <dl>
                             	<dt><img src="{$item.pic|get_cover='path'}" alt="" class="img" /></dt>
                                 <dd>
@@ -137,7 +136,7 @@
                                     <h4><if condition="$item['target']"><span>{$item.target}</span></if>{$item.source_time} {$item.source_name}</h4>
                                 </dd>
                             </dl>
-                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
+                            <h5><a href="/index/info/id/{$item.id}" target="_blank" class="grsub">展开全文</a><a href="/index/go/id/{$item.id}" target="_blank" class="orgsub">立即购买</a></h5>
                         </li>
                     	</volist> 
                     </div>
@@ -311,6 +310,7 @@
         {
             var hrefhtml_s="<a href='/'>有"+data.cnt+"条新发布条目，点此查看 </a><span><a href='#'>关闭提示</a></span>";
             $("#uptext2").html(hrefhtml_s);
+            //$("#uptext2").show();
             var hrefhtml_b="&bull; <a href='/'>有"+data.cnt+"条新发布条目，点此查看 &gt;</a>";
             $("#uptext").html(hrefhtml_b);
             $("#uptext").show();
@@ -330,7 +330,7 @@
     {
         clearInterval(sh);
     }
-},120000);
+},5000);
 </script>
 
 </body>

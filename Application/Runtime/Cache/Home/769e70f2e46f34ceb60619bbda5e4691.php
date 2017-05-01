@@ -51,8 +51,7 @@
                             <p>近10天共收录<?php echo ($total_count); ?>条 / 第<?php echo $_GET['p']?$_GET['p']:'1';?>页</p>
                             <div class="clearfix"></div>
                             <div style="text-align:center;">
-                            <div id="uptext2" class="uptext2" style="display: none;"><a href="http://www.wodeimai.com">有新发布条目，点此刷新...</a><span><a href="#">关闭提示</a></span></div>
-                            </a>
+                            <div id="uptext2" class="uptext2"></div>
                             </div>
                         </div>
                         <div class="rseach"><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="/Public/Home/images/seach2.gif" alt="" /></a></p></div>
@@ -95,15 +94,15 @@
                     	<ul>
                         <?php if(is_array($list_data)): $i = 0; $__LIST__ = $list_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><li class="hr">
                                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                                    <p class="mb0"><a href="<?php echo ($item["from_id"]); ?>"><img src="<?php echo (get_cover($item["pic"],'path')); ?>" alt="" class="img" /></a></p>
+                                    <p class="mb0"><a href="/index/info/id/<?php echo ($item["id"]); ?>"><img src="<?php echo (get_cover($item["pic"],'path')); ?>" alt="" class="img" /></a></p>
                                 </div>
                                 <dl class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
-                                    <dt><h1><a href="<?php echo ($item["from_id"]); ?>"><?php echo ($item["title"]); ?></a></h1>
-                                    	 <h3><?php echo ($item["desc"]); ?>...  <span><a href="<?php echo ($item["from_id"]); ?>">完整阅读&gt;</a></span></h3>
+                                    <dt><h1><a href="/index/info/id/<?php echo ($item["id"]); ?>"><?php echo ($item["title"]); ?></a></h1>
+                                    	 <h3><?php echo ($item["desc"]); ?>...  <span><a href="/index/info/id/<?php echo ($item["id"]); ?>">完整阅读&gt;</a></span></h3>
                                          <h4><span><?php echo ($item["source_time"]); ?></span> <?php echo ($item["source_name"]); ?></h4>
                                     </dt>
                                     <dd>
-                                    	<p><a href="#" class="imglistsub">直达链接 &gt;</a></p>
+                                    	<p><a href="/index/go/id/<?php echo ($item["id"]); ?>" class="imglistsub">直达链接 &gt;</a></p>
                                         <h3><?php if($item['target']): ?>商城：<span><?php echo ($item["target"]); ?></span><?php endif; ?></h3>
                                     </dd>
                                 </dl>
@@ -122,7 +121,7 @@
                 	
                     <div class="mhidden">
                     	<?php if(is_array($list_data)): $i = 0; $__LIST__ = $list_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><li>
-                    		<h1><a href="<?php echo ($item["from_id"]); ?>"><?php echo ($item["title"]); ?></a></h1>
+                    		<h1><a href="/index/info/id/<?php echo ($item["id"]); ?>"><?php echo ($item["title"]); ?></a></h1>
                             <dl>
                             	<dt><img src="<?php echo (get_cover($item["pic"],'path')); ?>" alt="" class="img" /></dt>
                                 <dd>
@@ -130,7 +129,7 @@
                                     <h4><?php if($item['target']): ?><span><?php echo ($item["target"]); ?></span><?php endif; echo ($item["source_time"]); ?> <?php echo ($item["source_name"]); ?></h4>
                                 </dd>
                             </dl>
-                            <h5><a href="#" class="grsub">展开全文</a><a href="#" class="orgsub">立即购买</a></h5>
+                            <h5><a href="/index/info/id/<?php echo ($item["id"]); ?>" class="grsub">展开全文</a><a href="/index/go/id/<?php echo ($item["id"]); ?>" class="orgsub">立即购买</a></h5>
                         </li><?php endforeach; endif; else: echo "" ;endif; ?> 
                     </div>
                     <ul class="list"></ul>
@@ -303,7 +302,7 @@
         {
             var hrefhtml_s="<a href='/'>有"+data.cnt+"条新发布条目，点此查看 </a><span><a href='#'>关闭提示</a></span>";
             $("#uptext2").html(hrefhtml_s);
-            $("#uptext2").show();
+            //$("#uptext2").show();
             var hrefhtml_b="&bull; <a href='/'>有"+data.cnt+"条新发布条目，点此查看 &gt;</a>";
             $("#uptext").html(hrefhtml_b);
             $("#uptext").show();
@@ -323,7 +322,7 @@
     {
         clearInterval(sh);
     }
-},120000);
+},5000);
 </script>
 
 </body>

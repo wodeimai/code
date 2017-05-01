@@ -1,6 +1,8 @@
 <?php
 namespace Home\Controller;
 
+use Go\Library\Guangdiu as Go;
+
 /**
  * 前台首页控制器
  * 主要获取首页聚合数据
@@ -20,7 +22,6 @@ class IndexController extends HomeController
     //系统首页
     public function index()
     {
-
         //获取分类信息
         $category = S('cate_list');
         krsort($category);
@@ -74,19 +75,42 @@ class IndexController extends HomeController
 
         //当前最大ID
         $big_id = $this->goods_model->order('id desc')->limit(1)->getField('id');
-        $big_id = '330';
+        $big_id = '430';
         $this->assign('big_id', $big_id);
 
         $this->display();
     }
 
+    //ajax获取更新数据
     public function get_news()
     {
         $maxid = I('maxid');
         log_info($maxid);
         $map['id'] = array('gt', $maxid);
         $news_cnt = $this->goods_model->where($map)->count();
-        $big_id = $this->goods_model->order('id desc')->limit(1)->getField('id');
-        $this->ajaxReturn(array('cnt' => $news_cnt, 'big_id' => $big_id));
+        $this->ajaxReturn(array('cnt' => $news_cnt));
+    }
+
+    public function go()
+    {
+        $id = I('id');
+        $url = $this->goods_model->where(array('id' => $id))->getField('target_url');
+        header("location:$url");
+        exit;
+    }
+
+    public function info()
+    {
+        $id = I('id');
+        $info = $this->goods_model->where(array('id' => $id))->find();
+        if ($info['status'] == '0') {
+            //检查来源站是哪儿，然后决定引用什么方法
+            if ($info['from'] == '1') {
+                $guangdiu = Go::get_detail_content($info['from_id']);
+            }
+            //更新数据表
+        }
+
+        //展现内容页
     }
 }

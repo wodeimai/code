@@ -389,7 +389,7 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 .tscrollblock .rseach{width:25%; float:left;padding:0px 15px; display:block;}
 .tscrollblock .rseach input{width:80%; float:left; margin-top:10px; height:30px; line-height:30px; border:1px solid #f0f0f0;}
 .tscrollblock .rseach p{width:20%; float:left; text-align:center;margin:10px 0 0 0px;}
-.tscrollblock .uptext2{display:inline-block; text-align:center; background:#ffd9d3; height:40px;line-height:40px;  margin:0px auto;  border:1px solid #fdbcb2; border-top:0;}
+.tscrollblock .uptext2{display:inline-block; text-align:center; background:#ffd9d3; height:40px;line-height:40px;  margin:0px auto;  border:0px solid #fdbcb2; border-top:0;}
 .tscrollblock .uptext2 a{color:#FF5400; text-decoration:underline; padding:0px 10px;}
 .tscrollblock .uptext2 span{border-left:1px solid #fdbcb2; display:inline-block; color:#999;}
 .tscrollblock .uptext2 span a{color:#999;}
