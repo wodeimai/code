@@ -106,11 +106,13 @@ class IndexController extends HomeController
         if ($info['status'] == '0') {
             //检查来源站是哪儿，然后决定引用什么方法
             if ($info['from'] == '1') {
-                $guangdiu = Go::get_detail_content($info['from_id']);
+                $info['content'] = Go::get_detail_content($info['from_id']);
             }
             //更新数据表
         }
 
         //展现内容页
+        $this->assign('info', $info);
+        //$this->display();
     }
 }
