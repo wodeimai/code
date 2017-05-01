@@ -47,7 +47,7 @@ class IndexController extends HomeController
             $value['source_time'] = time_tran($value['source_time']);
             $value['target'] = $new_mall_list[$value['target']];
         }
-        //dump($list_data);
+        $list_data['_page'] = str_replace('/Index/index/p', '/index', $list_data['_page']); //翻页设置短路由之后 代码需要修改
         $this->assign($list_data);
 
         //获取商场数据
