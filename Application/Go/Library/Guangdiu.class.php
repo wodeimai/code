@@ -157,22 +157,16 @@ class Guangdiu
         // div class=dabstract 详细内容div
         $dabstract = pq($html)->find('#dabstract');
 
-        foreach (pq($dabstract)->find('p') as $key => $value) {
-            $p['p_' . ($key + 1)] = pq($value)->html();
-        }
-
+        $content = pq($dabstract)->html();
         foreach (pq($dabstract)->find('img') as $key => $value) {
-            $img['pic_' . ($key + 1)] = pq($value)->attr('src');
+            $pic_url[$key] = pq($value)->attr('src');
         }
 
-        if (empty($p)) {
-            $p['p1'] = pq($dabstract)->html();
+        foreach ($pic_url as $key => $value) {
+            $pic_ids[] = get_cover(save_jpg($value, $id), 'path');
         }
-
-        //todo 图片入库，然后替换逛丢图片地址
-        log_debug($p);
-        log_debug($img);
-        die;
+        $content = str_replace($pic_url, $pic_ids, $content);
+        return $content;
     }
 
     /**

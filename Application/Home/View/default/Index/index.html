@@ -102,8 +102,8 @@
                                     <p class="mb0"><a href="/index/info/id/{$item.id}" target="_blank"><img src="{$item.pic|get_cover='path'}" alt="" class="img" /></a></p>
                                 </div>
                                 <dl class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
-                                    <dt><h1><a href="/index/info/id/{$item.id}" target="_blank">{$item.title}</a></h1>
-                                    	 <h3>{$item.desc}...  <span><a href="/index/info/id/{$item.id}">完整阅读&gt;</a></span></h3>
+                                    <dt><h1><a href="{:U('info',array('id'=>$item['id']))}" target="_blank">{$item.title}</a></h1>
+                                    	 <h3>{$item.desc}...  <span><a href="{:U('info',array('id'=>$item['id']))}">完整阅读&gt;</a></span></h3>
                                          <h4><span>{$item.source_time}</span> {$item.source_name}</h4>
                                     </dt>
                                     <dd>

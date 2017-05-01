@@ -103,16 +103,18 @@ class IndexController extends HomeController
     {
         $id = I('id');
         $info = $this->goods_model->where(array('id' => $id))->find();
-        if ($info['status'] == '0') {
+        if (!$info['status']) {
             //检查来源站是哪儿，然后决定引用什么方法
             if ($info['from'] == '1') {
                 $info['content'] = Go::get_detail_content($info['from_id']);
             }
             //更新数据表
+            $info['status'] = 1;
+            $this->goods_model->save($info);
         }
 
         //展现内容页
         $this->assign('info', $info);
-        //$this->display();
+        $this->display();
     }
 }

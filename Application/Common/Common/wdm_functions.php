@@ -40,10 +40,12 @@ function save_jpg($img, $id)
         mkdir($dir, '0777', true);
     }
     $content = file_get_contents($img);
-    file_put_contents($dir . $id . time() . '.jpg', $content);
+
+    $pic_name = time() . generate_str(6, 'num');
+    file_put_contents($dir . $pic_name . '.jpg', $content);
 
     $dir_db = '/Uploads/Picture/' . date('Y-m-d') . '/';
-    $data['path'] = $dir_db . $id . time() . '.jpg';
+    $data['path'] = $dir_db . $pic_name . '.jpg';
     $data['md5'] = md5_file($dir);
     $data['sha1'] = sha1_file($dir);
     $data['status'] = 1;
@@ -141,4 +143,25 @@ function curl_post($url)
     $Headers = curl_getinfo($ch);
     $url = substr($data, strpos($data, 'https'), strpos($data, '\';') - strpos($data, 'https'));
     return $url;
+}
+
+function generate_str($length = 8, $type = 'str')
+{
+    $num = '0123456789';
+    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    if ($type == 'all') {
+        $chars = $chars . $num;
+    }
+    if ($type == 'num') {
+        $chars = $num;
+    }
+
+    $str = '';
+    for ($i = 0; $i < $length; $i++) {
+        // 这里提供两种字符获取方式
+        // 第一种是使用 substr 截取$chars中的任意一位字符；
+        // 第二种是取字符数组 $chars 的任意元素
+        $str .= $chars[mt_rand(0, strlen($chars) - 1)];
+    }
+    return $str;
 }
