@@ -25,7 +25,7 @@
             <div class="row ">
             	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                    <div class="logo_seach">
-                    <h1><a href="/"><img src="__IMG__/logo.png"  height="50"></a></h1>
+                    <h1><a href="{:U('index')}"><img src="__IMG__/logo.png"  height="50"></a></h1>
                         <div><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="__IMG__/seach.gif" alt="" /></a></p></div>
                    </div>
                 </div>  
@@ -99,20 +99,20 @@
                         <volist name="list_data" id="item">
                         <li class="hr">
                                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                                    <p class="mb0"><a href="/index/info/id/{$item.id}" target="_blank"><img src="{$item.pic|get_cover='path'}" alt="" class="img" /></a></p>
+                                    <p class="mb0"><a href="/info/{$item.id}" target="_blank"><img src="{$item.pic|get_cover='path'}" alt="" class="img" /></a></p>
                                 </div>
                                 <dl class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
-                                    <dt><h1><a href="{:U('info',array('id'=>$item['id']))}" target="_blank">{$item.title}</a></h1>
-                                    	 <h3>{$item.desc}...  <span><a href="{:U('info',array('id'=>$item['id']))}">完整阅读&gt;</a></span></h3>
+                                    <dt><h1><a href="/info/{$item.id}" target="_blank">{$item.title}</a></h1>
+                                    	 <h3>{$item.desc}...  <span><a href="/info/{$item.id}">完整阅读&gt;</a></span></h3>
                                          <h4><span>{$item.source_time}</span> {$item.source_name}</h4>
                                     </dt>
                                     <dd>
-                                    	<p><a href="/index/go/id/{$item.id}" target="_blank" class="imglistsub">直达链接 &gt;</a></p>
+                                    	<p><a href="/go2url/{$item.id}" target="_blank" class="imglistsub">直达链接 &gt;</a></p>
                                         <h3><if condition="$item['target']">商城：<span>{$item.target}</span></if></h3>
                                     </dd>
                                 </dl>
                         	</li>
-                        </volist> 
+                        </volist>
                         </ul>
                     </div>
                     <!--  web over -->
@@ -128,7 +128,7 @@
                     <div class="mhidden">
                     	<volist name="list_data" id="item">
                         <li>
-                    		<h1><a href="/index/info/id/{$item.id}" target="_blank">{$item.title}</a></h1>
+                    		<h1><a href="/info/{$item.id}" target="_blank">{$item.title}</a></h1>
                             <dl>
                             	<dt><img src="{$item.pic|get_cover='path'}" alt="" class="img" /></dt>
                                 <dd>
@@ -136,7 +136,7 @@
                                     <h4><if condition="$item['target']"><span>{$item.target}</span></if>{$item.source_time} {$item.source_name}</h4>
                                 </dd>
                             </dl>
-                            <h5><a href="/index/info/id/{$item.id}" target="_blank" class="grsub">展开全文</a><a href="/index/go/id/{$item.id}" target="_blank" class="orgsub">立即购买</a></h5>
+                            <h5><a href="/info/{$item.id}" target="_blank" class="grsub">展开全文</a><a href="/go2url/{$item.id}" target="_blank" class="orgsub">立即购买</a></h5>
                         </li>
                     	</volist> 
                     </div>
@@ -305,7 +305,7 @@
     var maxid={$big_id};
     var cnt=0;
     var sh=setInterval(function(){
-    $.get("index.php?s=Home/Index/get_news/maxid/"+maxid, function(data){
+    $.get("/get_news/"+maxid, function(data){
         if(data.cnt>5)
         {
             var hrefhtml_s="<a href='/'>有"+data.cnt+"条新发布条目，点此查看 </a><span><a href='#'>关闭提示</a></span>";

@@ -384,7 +384,7 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	height:50px;
 }
 .uptext2 {display: none;}
-.tscrollblock .w1200{width:1200px; margin:0px auto;}
+.tscrollblock .w1200{width:1280px; margin:0px auto;}
 .tscrollblock .title{ margin:0; width:75%; float:left; padding:0px 15px;}
 .tscrollblock .rseach{width:25%; float:left;padding:0px 15px; display:block;}
 .tscrollblock .rseach input{width:80%; float:left; margin-top:10px; height:30px; line-height:30px; border:1px solid #f0f0f0;}
@@ -458,6 +458,9 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	line-height:25px;
 }
 .mlistnr p{
+	text-align:left;
+}
+.mlistnr p img{
 	text-align:center;
 }
 .mlistnrsub{
@@ -478,11 +481,11 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
     width:270px;
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1280px){
 	.mphone{display:none;}
 	
 }
-@media only screen and (max-width:1200px) and (min-width:769px){
+@media only screen and (max-width:1280px) and (min-width:769px){
 	.imglistsub{padding:10px 5px; font-size:12px;}
 	.page span,.page a{padding:0px 12px; line-height:40px;}
 	.hot h3{max-height:54px; line-height:18px; overflow:hidden;}

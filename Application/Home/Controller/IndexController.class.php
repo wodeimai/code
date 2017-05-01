@@ -91,7 +91,7 @@ class IndexController extends HomeController
         $this->ajaxReturn(array('cnt' => $news_cnt));
     }
 
-    public function go()
+    public function go2url()
     {
         $id = I('id');
         $url = $this->goods_model->where(array('id' => $id))->getField('target_url');
