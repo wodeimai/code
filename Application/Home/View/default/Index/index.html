@@ -63,15 +63,35 @@
                 	<div class="title2">
                     	<ul class="hr">
                         <li><span>类别：</span>
-                        <a href="/list/all" <if condition="$cate eq '' or $cate eq 'all'">class="hover"</if> >全部</a>
+                        <a href="
+                        <if condition="$mall eq '' or $mall eq 'all'">
+                        /list/all/all
+                        <else />
+                        /list/all/{$mall}
+                        </if>" <if condition="$cate eq '' or $cate eq 'all'">class="hover"</if> >全部</a>
                         <volist name="category" id="item">
-                            <a href="/list/{$item.key}" <if condition="$cate eq $item['key']">class="hover"</if>>{$item.name}</a>
+                            <a href="
+                            <if condition="$mall eq '' or $mall eq 'all'">
+                                /list/{$item.key}/all
+                            <else />
+                            /list/{$item.key}/{$mall}
+                            </if>" <if condition="$cate eq $item['key']">class="hover"</if>>{$item.name}</a>
                         </volist>
                         </li>
                         <li><span>商城：</span>
-                        <a href="#" class="hover">全部</a>
+                        <a href="
+                        <if condition="$cate eq '' or $cate eq 'all'">
+                        /list/all/all
+                        <else />
+                        /list/{$cate}/all
+                        </if>" <if condition="$mall eq '' or $mall eq 'all'">class="hover"</if>>全部</a>
                         <volist name="mall_list" id="item">
-                            <a href="{$item.id}">{$item.mall_name}</a>
+                            <a href="
+                            <if condition="$cate eq '' or $cate eq 'all'">
+                            /list/all/{$item.key}
+                            <else />
+                            /list/{$cate}/{$item.key}
+                            </if>" <if condition="$mall eq $item['key']">class="hover"</if>>{$item.mall_name}</a>
                         </volist>
                         </li>
                         </ul>

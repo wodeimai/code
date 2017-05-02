@@ -25,7 +25,7 @@
             <div class="row ">
             	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                    <div class="logo_seach">
-                    <h1><a href="<?php echo U('index');?>"><img src="/Public/Home/images/logo.png"  height="50"></a></h1>
+                    <h1><a href="/"><img src="/Public/Home/images/logo.png"  height="50"></a></h1>
                         <div><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="/Public/Home/images/seach.gif" alt="" /></a></p></div>
                    </div>
                 </div>  
@@ -63,8 +63,8 @@
                 	<div class="title2">
                     	<ul class="hr">
                         <li><span>类别：</span>
-                        <a href="#" class="hover">全部</a>
-                        <?php if(is_array($category)): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><a href="<?php echo ($item["key"]); ?>" ><?php echo ($item["name"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+                        <a href="/list/all" <?php if($cate == '' or $cate == 'all'): ?>class="hover"<?php endif; ?> >全部</a>
+                        <?php if(is_array($category)): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><a href="/list/<?php echo ($item["key"]); ?>" <?php if($cate == $item['key']): ?>class="hover"<?php endif; ?>><?php echo ($item["name"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
                         </li>
                         <li><span>商城：</span>
                         <a href="#" class="hover">全部</a>
@@ -94,19 +94,19 @@
                     	<ul>
                         <?php if(is_array($list_data)): $i = 0; $__LIST__ = $list_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><li class="hr">
                                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                                    <p class="mb0"><a href="/index/info/id/<?php echo ($item["id"]); ?>" target="_blank"><img src="<?php echo (get_cover($item["pic"],'path')); ?>" alt="" class="img" /></a></p>
+                                    <p class="mb0"><a href="/info/<?php echo ($item["id"]); ?>" target="_blank"><img src="<?php echo (get_cover($item["pic"],'path')); ?>" alt="" class="img" /></a></p>
                                 </div>
                                 <dl class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
-                                    <dt><h1><a href="<?php echo U('info',array('id'=>$item['id']));?>" target="_blank"><?php echo ($item["title"]); ?></a></h1>
-                                    	 <h3><?php echo ($item["desc"]); ?>...  <span><a href="<?php echo U('info',array('id'=>$item['id']));?>">完整阅读&gt;</a></span></h3>
+                                    <dt><h1><a href="/info/<?php echo ($item["id"]); ?>" target="_blank"><?php echo ($item["title"]); ?></a></h1>
+                                    	 <h3><?php echo ($item["desc"]); ?>...  <span><a href="/info/<?php echo ($item["id"]); ?>">完整阅读&gt;</a></span></h3>
                                          <h4><span><?php echo ($item["source_time"]); ?></span> <?php echo ($item["source_name"]); ?></h4>
                                     </dt>
                                     <dd>
-                                    	<p><a href="/index/go/id/<?php echo ($item["id"]); ?>" target="_blank" class="imglistsub">直达链接 &gt;</a></p>
+                                    	<p><a href="/go2url/<?php echo ($item["id"]); ?>" target="_blank" class="imglistsub">直达链接 &gt;</a></p>
                                         <h3><?php if($item['target']): ?>商城：<span><?php echo ($item["target"]); ?></span><?php endif; ?></h3>
                                     </dd>
                                 </dl>
-                        	</li><?php endforeach; endif; else: echo "" ;endif; ?> 
+                        	</li><?php endforeach; endif; else: echo "" ;endif; ?>
                         </ul>
                     </div>
                     <!--  web over -->
@@ -121,7 +121,7 @@
                 	
                     <div class="mhidden">
                     	<?php if(is_array($list_data)): $i = 0; $__LIST__ = $list_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><li>
-                    		<h1><a href="/index/info/id/<?php echo ($item["id"]); ?>" target="_blank"><?php echo ($item["title"]); ?></a></h1>
+                    		<h1><a href="/info/<?php echo ($item["id"]); ?>" target="_blank"><?php echo ($item["title"]); ?></a></h1>
                             <dl>
                             	<dt><img src="<?php echo (get_cover($item["pic"],'path')); ?>" alt="" class="img" /></dt>
                                 <dd>
@@ -129,7 +129,7 @@
                                     <h4><?php if($item['target']): ?><span><?php echo ($item["target"]); ?></span><?php endif; echo ($item["source_time"]); ?> <?php echo ($item["source_name"]); ?></h4>
                                 </dd>
                             </dl>
-                            <h5><a href="/index/info/id/<?php echo ($item["id"]); ?>" target="_blank" class="grsub">展开全文</a><a href="/index/go/id/<?php echo ($item["id"]); ?>" target="_blank" class="orgsub">立即购买</a></h5>
+                            <h5><a href="/info/<?php echo ($item["id"]); ?>" target="_blank" class="grsub">展开全文</a><a href="/go2url/<?php echo ($item["id"]); ?>" target="_blank" class="orgsub">立即购买</a></h5>
                         </li><?php endforeach; endif; else: echo "" ;endif; ?> 
                     </div>
                     <ul class="list"></ul>
@@ -297,13 +297,13 @@
     var maxid=<?php echo ($big_id); ?>;
     var cnt=0;
     var sh=setInterval(function(){
-    $.get("index.php?s=Home/Index/get_news/maxid/"+maxid, function(data){
+    $.get("/get_news/"+maxid, function(data){
         if(data.cnt>5)
         {
-            var hrefhtml_s="<a href='<?php echo U('index');?>'>有"+data.cnt+"条新发布条目，点此查看 </a><span><a href='#'>关闭提示</a></span>";
+            var hrefhtml_s="<a href='/'>有"+data.cnt+"条新发布条目，点此查看 </a><span><a href='#'>关闭提示</a></span>";
             $("#uptext2").html(hrefhtml_s);
             //$("#uptext2").show();
-            var hrefhtml_b="&bull; <a href='<?php echo U('index');?>'>有"+data.cnt+"条新发布条目，点此查看 &gt;</a>";
+            var hrefhtml_b="&bull; <a href='/'>有"+data.cnt+"条新发布条目，点此查看 &gt;</a>";
             $("#uptext").html(hrefhtml_b);
             $("#uptext").show();
             var curtitle="<?php echo C('WEB_SITE_TITLE');?>";

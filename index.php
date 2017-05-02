@@ -29,9 +29,6 @@ if (!is_file(APP_PATH . 'User/Conf/config.php')) {
     exit;
 }
 
-//url中屏蔽home
-//define('BIND_MODULE', 'Home');
-
 /**
  * 缓存目录设置
  * 此目录必须可写，建议移动到非WEB目录

@@ -3,6 +3,7 @@ html,body{
       -webkit-text-size-adjust:none;
 	  font-family:"微软雅黑","helvetica";
 	  background:#e9eae8;
+	  font-size:12px;
 }
 a:link,a:visited,a:hover{
 	color:#333;
@@ -120,10 +121,10 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 }
 .title2 li span{
 	color:#959595;
-	padding-right:10px;
+	padding-right:8px;
 }
 .title2 li a{
-	padding:0 10px;
+	padding:0 8px;
 	color:#FF5400;
 }
 .title2 li a.hover{
@@ -367,6 +368,8 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	background:#fff;
 	font-size:14px;
 	color:#777;
+	z-index: 99;
+    position: relative;
 }
 .footer h3{
 	color:#777;
@@ -384,7 +387,7 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	height:50px;
 }
 .uptext2 {display: none;}
-.tscrollblock .w1200{width:1280px; margin:0px auto;}
+.tscrollblock .w1200{width:1080px; margin:0px auto;}
 .tscrollblock .title{ margin:0; width:75%; float:left; padding:0px 15px;}
 .tscrollblock .rseach{width:25%; float:left;padding:0px 15px; display:block;}
 .tscrollblock .rseach input{width:80%; float:left; margin-top:10px; height:30px; line-height:30px; border:1px solid #f0f0f0;}
@@ -468,8 +471,8 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 	margin:30px 0;
 }
 .uptext{
-	height:50px;
-	line-height:50px;
+	height:40px;
+	line-height:40px;
 	text-align:center;
 	background:#ffd5c8;
 	color:#FF5400;
@@ -478,14 +481,14 @@ ol, ul, li{margin:0; list-style:none; padding:0;}
 .aablock{
     position:fixed;
     top:50px;
-    width:270px;
+    width:240px;
 }
 
-@media (min-width: 1280px){
+@media (min-width: 1080px){
 	.mphone{display:none;}
 	
 }
-@media only screen and (max-width:1280px) and (min-width:769px){
+@media only screen and (max-width:1080px) and (min-width:769px){
 	.imglistsub{padding:10px 5px; font-size:12px;}
 	.page span,.page a{padding:0px 12px; line-height:40px;}
 	.hot h3{max-height:54px; line-height:18px; overflow:hidden;}
