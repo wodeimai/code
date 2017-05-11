@@ -221,15 +221,9 @@
                 <div class="mt20 main_l aa">
                 	<div class="hr title3">最热点击Top9<a href="#">全部&gt;</a></div>
                     <ul class="hot">
-                    	<li><p><img src="__IMG__/1.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/2.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/3.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/4.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/5.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/6.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/7.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/8.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/9.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
+                    	<volist name="top9" id="item">
+                            <li><p><img src="__IMG__/{$key+1}.gif" alt="" /></p><h3>{$item.title}</h3></li>
+                        </volist>
                         
                     </ul>
                 </div>
