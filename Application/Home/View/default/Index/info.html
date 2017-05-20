@@ -2,14 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title></title>
+    <title>{$info.title|strip_tags}&nbsp;|&nbsp;{:C('WEB_SITE_TITLE')}</title>
+    <meta name="description" content="{:C('WEB_SITE_DESCRIPTION')}"/>
+    <meta name="keywords" content="{:C('WEB_SITE_KEYWORD')}"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="shortcut icon" href="__IMG__/favicon.ico" type="image/x-icon" />
+     <link rel="shortcut icon" href="__IMG__/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="__CSS__/normalize3.0.2.min.css">
     <link rel="stylesheet" type="text/css" href="__CSS__/style.css">
-
     <!--[if lt IE 9]>
     <script src="../js/html5.js"></script>
     <script src="../js/ie9.js"></script>
@@ -18,21 +19,24 @@
 </head>
 
 <body>
-    <!--head begin-->
+     <!--head begin-->
     <div class="head">
         <div class="container">
             <div class="row ">
-            	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                    <div class="logo_seach">
-                        <h1>logo</h1>
-                        <div><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="__IMG__/seach.gif" alt="" /></a></p></div>
+                    <h1><a href="/"><img src="__IMG__/logo.png"  height="50"></a></h1>
+                        <div>
+                        <form action="/" method="get" id="subform">
+                        <input type="text" name="keywords" placeholder="搜索全网折扣..." /><p><a href="javascript:;"  onclick='submit()' ><img src="__IMG__/seach.gif" alt="" /></a></p>
+                        </form>
+                        </div>
                    </div>
                 </div>  
             </div>
                
         </div>
     </div>
-   
 
     <!--head over-->
     <div class="container">
@@ -43,30 +47,26 @@
                 
                 
                 <div class="main_l" style="margin-top:20px;">
-                	<div class="hr title3 none">2小时前&nbsp;&nbsp;&nbsp;&nbsp;商城：天猫 （全部天猫的折扣>）&nbsp;&nbsp;&nbsp;&nbsp;来源：没得比<a href="#"><img src="__IMG__/icon07.gif" alt="" /></a></div>
+                	<div class="hr title3 none">{$info.source_time|time_tran}&nbsp;&nbsp;&nbsp;&nbsp;商城：{$info.targets} （<a href="#">全部{$info.targets}的折扣> </a>）&nbsp;&nbsp;&nbsp;&nbsp;来源：{$info.source_name}<a href="#"><img src="__IMG__/icon07.gif" alt="" /></a></div>
                     
                     
                     <div class="mlistnr">
-                    	<h1><div><span>￥149.00</span>太平鸟男装 条纹茄克衫太平鸟男装 条纹茄克衫外套外套</div><p><a href="#" class="imglistsub">直达链接&gt;</a></p></h1>
+                    	<h1><div>{$info.title}</div><p><a href="/go2url/{$info.id}" target="_blank" class="imglistsub">直达链接&gt;</a></p></h1>
                         {$info.content}
-                        <div class="mlistnrsub"><a href="#" class="imglistsub2">前往购买&raquo;</a></div>
+                        <div class="mlistnrsub"><a href="/go2url/{$info.id}" target="_blank" class="imglistsub2">前往购买&raquo;</a></div>
                     </div>
                    
                     
                 </div>
               
-               <div class="main_l none" style="margin-top:20px;">
+               <!-- <div class="main_l none" style="margin-top:20px;">
                 	<div class="hr title3">热门推荐</div>
                     
                     
                     <div class="mlist">
                     	<ul>
+
                             <li><p><img src="__IMG__/img02.gif" alt="" class="img" /></p><h3>京东商城 太平鸟男装 京东商城 太平鸟男装 条纹茄克衫外京东商城 太平鸟男装 条纹茄克衫外条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                            <li><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                            <li><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                            <li><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                            <li><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                            <li><p><img src="__IMG__/img02.gif" alt="" class="img" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
                             
                         </ul>
                     </div>
@@ -81,53 +81,48 @@
                     
                     <div class="mlist">
                     	<ul>
+                            
                             <li><p><img src="__IMG__/img02.gif" alt="" class="img" /></p><h3>京东商城 太平鸟男装 京东商城 太平鸟男装 条纹茄克衫外京东商城 太平鸟男装 条纹茄克衫外条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                            <li><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                            <li><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                            <li><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                            <li><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                            <li><p><img src="__IMG__/img02.gif" alt="" class="img" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
                             
                         </ul>
                     </div>
                    
                     
-                </div>
+                </div> -->
             </div>
             
             <!--  左侧 over -->
             <!--  右侧 begin -->
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 main_r">
             	
-                <div class="mt20 main_l">
+                <!--div class="mt20 main_l">
                 	<div class="hr title3">热门推荐</div>
                     <div class="mlist2">
                     	<ul>
+
                             <li><a href="#"><p><img src="__IMG__/img02.gif" alt="" class="img" /></p><h3>京东商城 太平鸟男装 京东商城 太平鸟男装 条纹茄克衫外京东商城 太平鸟男装 条纹茄克衫外条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></a></li>
-                            <li><a href="#"><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></a></li>
-                            <li><a href="#"><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></a></li>
-                            <li><a href="#"><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></a></li>
-                            <li><a href="#"><p><img src="__IMG__/img02.gif" alt="" class="img"/></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></a></li>
-                            <li><a href="#"><p><img src="__IMG__/img02.gif" alt="" class="img" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></a></li>
+                            
                             
                         </ul>
                     </div>
-                </div>
+                </div-->
                 
                 <div class="mt20 main_l">
                 	<div class="hr title3">常用网站导航</div>
                     <ul class="partner">
-                    	<li class="hr"><img src="__IMG__/img03.gif" alt="" class="img" /></li>
-                        <li class="hr"><img src="__IMG__/img04.gif" alt="" class="img" /></li>
-                        <li class="hr"><img src="__IMG__/img03.gif" alt="" class="img" /></li>
-                        <li class="hr"><img src="__IMG__/img04.gif" alt="" class="img" /></li>
-                        <li class="hr"><img src="__IMG__/img03.gif" alt="" class="img" /></li>
-                        <li class="hr"><img src="__IMG__/img04.gif" alt="" class="img" /></li>
+                    	<li class="hr"><a href="http://www.jd.com" target="_blank"><img src="__IMG__/mall/jd.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.z.cn" target="_blank"><img src="__IMG__/mall/z.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.suning.com" target="_blank"><img src="__IMG__/mall/suning.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.kaola.com/" target="_blank"><img src="__IMG__/mall/kaola.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.dangdang.com" target="_blank"><img src="__IMG__/mall/dd.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.yhd.com" target="_blank"><img src="__IMG__/mall/1.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://you.163.com" target="_blank"><img src="__IMG__/mall/yanxuan.png" alt="" class="img" /></a></li>
+                        <li class="hr"><a href="http://www.gome.com.cn" target="_blank"><img src="__IMG__/mall/guomei.png" alt="" class="img" /></a></li>
                     </ul>
                 </div>
                 
                 
-                <div class="mt20 main_l">
+                <!-- <div class="mt20 main_l">
                 	<div class="hr title3">分类/热词</div>
                     <ul class="hotclass">
                     	<li><span>&bull;<a href="#">母婴</a></span><a href="#">尿布</a><a href="#">奶粉</a><a href="#">奶瓶</a><a href="#">婴儿车</a><a href="#">吸奶器</a></li>
@@ -137,22 +132,15 @@
                         <li><span>&bull;<a href="#">没装配饰</a></span><a href="#">尿布</a><a href="#">奶粉</a><a href="#">奶瓶</a><a href="#">婴儿车</a><a href="#">吸奶器</a></li>
                         <li><span>&bull;<a href="#">户外活动</a></span><a href="#">尿布</a><a href="#">奶粉</a><a href="#">奶瓶</a><a href="#">婴儿车</a><a href="#">吸奶器</a></li>
                     </ul>
-                </div>
+                </div> -->
                 
                 
-                <div class="mt20 main_l">
+                <div class="mt20 main_l aa">
                 	<div class="hr title3">最热点击Top9<a href="#">全部&gt;</a></div>
                     <ul class="hot">
-                    	<li><p><img src="__IMG__/1.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/2.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/3.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/4.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/5.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/6.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/7.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/8.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        <li><p><img src="__IMG__/9.gif" alt="" /></p><h3>京东商城 太平鸟男装 条纹茄克衫外套 <span>69元包邮</span> 需用<span>券</span></h3></li>
-                        
+                    	<volist name="top9" id="item">
+                        <a href="/info/{$item.id}" target="_blank"><li><p><img src="__IMG__/{$key+1}.gif" alt="" /></p><h3>{$item.title}</h3></li></a>
+                        </volist>
                     </ul>
                 </div>
                 
@@ -190,10 +178,15 @@
     <!--  head slide begin -->
    
     <!--  head slide over -->
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-   
+	<script type="text/javascript" src="__JS__/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__JS__/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__JS__/js/main.js"></script>
+<script type="text/javascript">  
+   //提交搜索
+function submit(){
+    document.getElementById("subform").submit();
+}
+</script>
 </body>
 
 </html>

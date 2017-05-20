@@ -164,6 +164,16 @@ class IndexController extends HomeController
             $this->goods_model->save($info);
         }
 
+        //最热点击top9
+        $top9 = $this->goods_model->order('read_num desc')->limit(9)->select();
+        $this->assign('top9', $top9);
+
+        $mall_list = S('mall_name');
+        foreach ($mall_list as $key => $value) {
+            $new_mall_list[$value['id']] = $value['mall_name'];
+        }
+        $info['targets'] = $new_mall_list[$info['target']];
+
         //展现内容页
         $this->assign('info', $info);
         $this->display();
