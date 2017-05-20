@@ -26,14 +26,17 @@
             	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                    <div class="logo_seach">
                     <h1><a href="/"><img src="__IMG__/logo.png"  height="50"></a></h1>
-                        <div><input type="text" placeholder="搜索全网折扣..." /><p><a href="#"><img src="__IMG__/seach.gif" alt="" /></a></p></div>
+                        <div>
+                        <form action="" method="get" id="subform">
+                        <input type="text" name="keywords" placeholder="搜索全网折扣..." /><p><a href="javascript:;"  onclick='submit()' ><img src="__IMG__/seach.gif" alt="" /></a></p>
+                        </form>
+                        </div>
                    </div>
                 </div>  
             </div>
                
         </div>
     </div>
-   
 
     <!--head over-->
     <div class="container">
@@ -222,7 +225,7 @@
                 	<div class="hr title3">最热点击Top9<a href="#">全部&gt;</a></div>
                     <ul class="hot">
                     	<volist name="top9" id="item">
-                            <li><p><img src="__IMG__/{$key+1}.gif" alt="" /></p><h3>{$item.title}</h3></li>
+                        <a href="/info/{$item.id}" target="_blank"><li><p><img src="__IMG__/{$key+1}.gif" alt="" /></p><h3>{$item.title}</h3></li></a>
                         </volist>
                         
                     </ul>
@@ -238,21 +241,21 @@
     <div class="footer">
       <div class="container">
         <div class="row">
-        	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+        	<div class="col-lg-6 col-md-3 col-sm-6 col-xs-6">
             	<h3>关于我们</h3>
                 <p>我得买是全网首个将多家折扣资讯网站进行智能聚合的引擎，每天更新数据1500-3000条，与数据来源网站保持分钟级别的同步，让您在一站获得全网折扣信息。</p>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+            <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
             	<h3>官方微博</h3>
-                <p>我得买是全网首个将多家折扣资讯网站进行智能聚合的引擎，每天更新数据1500-3000条，与数据来源网站保持分钟级别的同步，让您在一站获得全网折扣信息。</p>
+                <p></p>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
             	<h3>微信公众号</h3>
-                <p>我得买是全网首个将多家折扣资讯网站进行智能聚合的引擎，每天更新数据1500-3000条，与数据来源网站保持分钟级别的同步，让您在一站获得全网折扣信息。</p>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <p></p>
+            </div> -->
+            <div class="col-lg-6 col-md-3 col-sm-6 col-xs-6">
             	<h3>网站信息</h3>
-                <p>我得买是全网首个将多家折扣资讯网站进行智能聚合的引擎，每天更新数据1500-3000条，与数据来源网站保持分钟级别的同步，让您在一站获得全网折扣信息。</p>
+                <p><a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备14054987号</a></p>
             </div>
         </div>
       </div>
@@ -345,6 +348,11 @@
         clearInterval(sh);
     }
 },5000);
+
+//提交搜索
+function submit(){
+    document.getElementById("subform").submit();
+}
 </script>
 
 </body>
